@@ -1,0 +1,40 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color : #424242;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Segoe Script", serif;
+  font-size: 48px;
+  font-weight: 300;
+  -webkit-transform: rotate(-9deg);
+  -moz-transform: rotate(-9deg);
+  -ms-transform: rotate(-9deg);
+  -o-transform: rotate(-9deg);
+  transform: rotate(-9deg);
+  color: white;
+  text-shadow: 0 0 64px #ffaf48, 0 0 64px #ffaf48, 0 0 64px #ffaf48, 0 0 64px #ffaf48, 0 0 64px #ffaf48, 0 0 64px #ffaf48, 0 0 64px #ffaf48;
+}
+
+h3 {
+  margin: 0;
+  line-height: 1;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.vertical {
+  display: flex;
+}.vertical:after {
+  content: "";
+  display: block;
+  width: 1px;
+  background-color: rgba(0,0,0, 0.10);
+}

@@ -1,0 +1,247 @@
+#main {
+  height: calc(100vh + 160px);
+  background-image: url(../img/main.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;/*
+  background-size: cover;*/
+}
+
+#main .flex-container {
+  height: 100vh;
+}
+
+.main-navigation {
+}
+
+.main-navigation a {
+  font-weight: 900;
+  color: white;
+}
+
+.main-content {
+}
+
+.main-content-cta {
+  margin-top: 32px;
+  margin-bottom: 64px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 4px solid white;
+  background-color: rgba(0,0,0, 0.5);
+  color: white;
+  box-shadow: 0 0 2px white;
+  text-shadow: 0 0 2px white;
+}
+
+
+
+
+
+#tours {
+  margin-top: -128px;
+}
+
+.tour {
+  position: relative;
+  width: 239px;
+  margin: 0.5px;
+  font-size: 11px;
+  line-height : 16px;
+  background-color: white;
+  color : #757575;
+} .tour:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: black;
+  box-shadow: 0 8px 32px rgba(0,0,0, 0.10);
+}
+
+.tour-photo {
+  position: relative;
+} .tour-photo:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  background : -moz-linear-gradient(50% 0% -90deg,rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.04) 3.84%,rgba(255, 255, 255, 1) 100%);
+  background : -webkit-linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.04) 3.84%, rgba(255, 255, 255, 1) 100%);
+  background : -webkit-gradient(linear,50% 0% ,50% 100% ,color-stop(0,rgba(255, 255, 255, 0) ),color-stop(0.0384,rgba(255, 255, 255, 0.04) ),color-stop(1,rgba(255, 255, 255, 1) ));
+  background : -o-linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.04) 3.84%, rgba(255, 255, 255, 1) 100%);
+  background : -ms-linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.04) 3.84%, rgba(255, 255, 255, 1) 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#FFFFFF' ,GradientType=0)";
+  background : linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.04) 3.84%, rgba(255, 255, 255, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF',endColorstr='#FFFFFF' , GradientType=0);
+}
+
+#tour01 .tour-photo {
+  background: url(../img/tours/walking.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#tour02 .tour-photo {
+  background: url(../img/tours/halfday.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#tour03 .tour-photo {
+  background: url(../img/tours/oneday.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#tour04 .tour-photo {
+  background: url(../img/tours/river.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#tour05 .tour-photo {
+  background: url(../img/tours/burabay02.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.tour-content {
+  padding: 0 24px 24px;
+  background: white;
+}
+
+.tour-title {
+  font-size: 18px;
+  font-weight: 700;
+  color : #424242;
+}
+
+.tour-description {
+  
+}
+
+.tour-price {
+  line-height : 16px;
+  font-size: 21px;
+  font-weight: 700;
+  color : #2196F3;
+} .tour-price span {
+  font-size : 14px;
+}
+
+
+
+
+
+#places {
+  
+}
+
+.place-photo {
+  box-shadow: 0 0 0 16px white inset, 0 8px 32px rgba(0,0,0, 0.10);
+}
+
+#place01 .place-photo {
+  background: url(../img/places/opera.png) center center no-repeat;
+  background-size: cover;
+}
+
+#place02 .place-photo {
+  background: url(../img/places/pyramid.png) center center no-repeat;
+  background-size: cover;
+}
+
+#place03 .place-photo {
+  background: url(../img/places/kmg.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#place04 .place-photo {
+  background: url(../img/places/shatyr.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#place05 .place-photo {
+  background: url(../img/places/bayterek.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.places-hashtag {
+  font-size: 24px;
+  line-height: 34px;
+} .places-hashtag span {
+  font-weight: 700;
+  color: #01579b;
+}
+
+
+
+
+
+#guides {
+  
+}
+
+.guide {
+  
+}
+
+#guide01 .guide-photo {
+  background: url(../img/guides/01.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#guide02 .guide-photo {
+  background: url(../img/guides/02.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#guide03 .guide-photo {
+  background: url(../img/guides/03.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#guide04 .guide-photo {
+  background: url(../img/guides/04.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.guide-name {
+  line-height: 1;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+
+
+
+
+#book {
+  position: relative;
+  height: 100vh;
+  background: url(../img/book.png) center top no-repeat;
+  background-size: cover;
+} #book:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background : -moz-linear-gradient(50% 100% 90deg,rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 1) 100%);
+  background : -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  background : -webkit-gradient(linear,50% 100% ,50% 0% ,color-stop(0,rgba(255, 255, 255, 0) ),color-stop(1,rgba(255, 255, 255, 1) ));
+  background : -o-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  background : -ms-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#FFFFFF' ,GradientType=0)";
+  background : linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF',endColorstr='#FFFFFF' , GradientType=0);
+}
+
+.book-header {
+  z-index: 1;
+}

@@ -1,0 +1,10 @@
+@media screen and (min-width: 1200px) {
+  
+  #tour03 {
+    z-index: 1;
+    -webkit-transform: scale(1.1);
+  } #tour03:before {
+    z-index: -1;
+  }
+  
+}
