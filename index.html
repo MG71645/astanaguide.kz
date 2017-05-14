@@ -7,32 +7,35 @@
     <link rel="stylesheet" href="css/flex.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/300.css">
     <link rel="stylesheet" href="css/1200.css">
     <link rel="stylesheet" href="css/animation.css">
   </head>
   <body>
     <section id="main" class="flex-row">
       <div class="flex-container" data-align-content="justify">
-        <div class="main-navigation">
-          <div class="flex-row" data-cell-spacing="16px" data-padding="64y" data-align-content="end">
+        <div class="main-navigation" data-padding="16x 24y lg:0x lg:64y">
+          <div class="flex-row flex-items-center" data-cell-spacing="16px; xs: 8px" data-align-content="center; md: end">
             <a href="#tours">Туры</a>
             <a href="#places">Места</a>
             <a href="#advantages">Преимущества</a>
             <a href="#guides">Гиды</a>
-            <a href="#book">Заказать</a>
+            <div>
+              <a href="#booking" class="main-navigation-cta">Заказать</a>
+            </div>
           </div>
         </div>
         <div class="main-content">
           <div class="flex-col flex-items-center">
             <h2>Мы встречаем <br><span>Друзей!</span></h2>
-            <button class="main-content-cta">Узнать больше</button>
+            <a href="#tours" class="main-content-cta">Узнать больше</a>
           </div>
         </div>
       </div>
     </section>
-    <section id="tours">
+    <section id="tours" data-padding="64y xs:32y">
       <div class="flex-container">
-        <div class="flex-row">
+        <div class="flex-row tours-slider">
           <div class="tour" id="tour01">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content">
@@ -206,9 +209,9 @@
         </div>
       </div>
     </section>
-    <section id="places" data-padding="64y">
+    <section id="places" data-padding="64y xs:32y">
       <div class="flex-container">
-        <div class="flex-col" data-cell-spacing="32px">
+        <div class="flex-col" data-cell-spacing="32px; xs: 16px">
           <div class="places-header">
             <div data-text-align="center" data-cell-spacing="8px">
               <img src="img/divider.svg" width="64">
@@ -216,29 +219,31 @@
             </div>
           </div>
           <div class="places-content">
-            <div class="flex-row flex-nowrap" data-cell-spacing="8px">
+            <div class="flex-nowrap" data-cell-spacing="8px" data-display="col; md: row">
               <div class="flex-col flex-full" id="place01">
                 <div class="flex-grow place-photo"></div>
               </div>
               <div class="flex-full">
-                <div class="flex-col" data-cell-spacing="8px">
-                  <div class="flex-grow">
-                    <div class="flex-row flex-nowrap" data-cell-spacing="8px">
-                      <div class="flex-grow" id="place02">
-                        <div class="place-photo" data-shape="3x2"></div>
-                      </div>
-                      <div class="flex-grow" id="place03">
-                        <div class="place-photo" data-shape="3x2"></div>
+                <div data-padding="16x lg:0x">
+                  <div class="flex-col" data-cell-spacing="8px">
+                    <div class="flex-grow">
+                      <div class="flex-row flex-nowrap" data-cell-spacing="8px">
+                        <div class="flex-grow" id="place02">
+                          <div class="place-photo" data-shape="3x2"></div>
+                        </div>
+                        <div class="flex-grow" id="place03">
+                          <div class="place-photo" data-shape="3x2"></div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="flex-grow" id="place04">
-                    <div class="flex-row flex-nowrap" data-cell-spacing="8px">
-                      <div class="flex-grow">
-                        <div class="place-photo" data-shape="3x2"></div>
-                      </div>
-                      <div class="flex-grow" id="place05">
-                        <div class="place-photo" data-shape="3x2"></div>
+                    <div class="flex-grow" id="place04">
+                      <div class="flex-row flex-nowrap" data-cell-spacing="8px">
+                        <div class="flex-grow">
+                          <div class="place-photo" data-shape="3x2"></div>
+                        </div>
+                        <div class="flex-grow" id="place05">
+                          <div class="place-photo" data-shape="3x2"></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -247,16 +252,16 @@
             </div>
           </div>
           <div class="places-hashtag flex-col flex-items-center" data-text-align="center">
-            <div class="flex-full flex-md-8">
+            <div class="flex-full flex-md-8" data-padding="16x lg:0x">
               Share your stories about Astana with our <span>#astanaguide</span> hashtag and get featured in our social feed
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="advantages" data-padding="64y">
+    <section id="advantages" data-padding="64y xs:32y">
       <div class="flex-container">
-        <div class="flex-col" data-cell-spacing="32px">
+        <div class="flex-col" data-cell-spacing="32px xs: 16px">
           <div class="advantages-header">
             <div data-cell-spacing="8px" data-text-align="center">
               <img src="img/divider.svg" width="64">
@@ -265,7 +270,7 @@
           </div>
           <div class="advantages-content">
             <div class="flex-row">
-              <div class="advantage flex-half flex-md-3" data-padding="32px">
+              <div class="advantage flex-half flex-md-3" data-padding="32px xs:16px">
                 <div data-text-align="center" data-cell-spacing="12px">
                   <div>
                     <img src="img/badges/guide.svg" width="64">
@@ -273,7 +278,7 @@
                   <div>Дружелюбные гиды из лучшего ВУЗа страны</div>
                 </div>
               </div>
-              <div class="advantage flex-half flex-md-3" data-padding="32px">
+              <div class="advantage flex-half flex-md-3" data-padding="32px xs:16px">
                 <div data-text-align="center" data-cell-spacing="12px">
                   <div>
                     <img src="img/badges/payment.svg" width="64">
@@ -281,7 +286,7 @@
                   <div>Оплата наличными и банковской картой</div>
                 </div>
               </div>
-              <div class="advantage flex-half flex-md-3" data-padding="32px">
+              <div class="advantage flex-half flex-md-3" data-padding="32px xs:16px">
                 <div data-text-align="center" data-cell-spacing="12px">
                   <div>
                     <img src="img/badges/map.svg" width="64">
@@ -289,7 +294,7 @@
                   <div>Карта лучших мест Астаны в подарок</div>
                 </div>
               </div>
-              <div class="advantage flex-half flex-md-3" data-padding="32px">
+              <div class="advantage flex-half flex-md-3" data-padding="32px xs:16px">
                 <div data-text-align="center" data-cell-spacing="12px">
                   <div>
                     <img src="img/badges/support.svg" width="64">
@@ -302,8 +307,8 @@
         </div>
       </div>
     </section>
-    <section id="guides" data-padding="64y">
-      <div class="flex-container">
+    <section id="guides" data-padding="64y xs:32y">
+      <div class="flex-container" data-padding="16x lg:0x">
         <div class="flex-col" data-cell-spacing="32px">
           <div class="guides-header">
             <div data-cell-spacing="8px" data-text-align="center">
@@ -312,8 +317,8 @@
             </div>
           </div>
           <div class="guides-content">
-            <div class="flex-row" data-cell-spacing="16px">
-              <div class="guide flex-full flex-sm-half flex-md-3" id="guide01">
+            <div class="flex-row" data-cell-spacing="8px" data-cell-width="half md:3">
+              <div class="guide" id="guide01">
                 <div class="flex-col" data-cell-spacing="8px">
                   <div>
                     <div class="guide-photo" data-shape="square"></div>
@@ -326,7 +331,7 @@
                   </div>
                 </div>
               </div>
-              <div class="guide flex-full flex-sm-half flex-md-3" id="guide02">
+              <div class="guide" id="guide02">
                 <div class="flex-col" data-cell-spacing="8px">
                   <div>
                     <div class="guide-photo" data-shape="square"></div>
@@ -339,7 +344,7 @@
                   </div>
                 </div>
               </div>
-              <div class="guide flex-full flex-sm-half flex-md-3" id="guide03">
+              <div class="guide" id="guide03">
                 <div class="flex-col" data-cell-spacing="8px">
                   <div>
                     <div class="guide-photo" data-shape="square"></div>
@@ -352,7 +357,7 @@
                   </div>
                 </div>
               </div>
-              <div class="guide flex-full flex-sm-half flex-md-3" id="guide04">
+              <div class="guide" id="guide04">
                 <div class="flex-col" data-cell-spacing="8px">
                   <div>
                     <div class="guide-photo" data-shape="square"></div>
@@ -370,17 +375,62 @@
         </div>
       </div>
     </section>
-    <section id="book" data-padding="64y">
-      <div class="flex-container">
+    <section id="booking" data-padding="64y xs:32y">
+      <div class="flex-container" data-padding="16x lg:0x">
         <div class="flex-col" data-cell-spacing="32px">
-          <div class="book-header">
+          <div class="booking-header">
             <div data-cell-spacing="8px" data-text-align="center">
               <img src="img/divider.svg" width="64">
               <h3>Заказать Тур</h3>
             </div>
           </div>
-          <div class="book-content">
-            
+          <div class="booking-content flex-col flex-items-center">
+            <form class="booking-form flex-full flex-lg-8">
+              <div data-cell-width="full sm:3" data-display="col sm: row" data-cell-spacing="8px">
+                <div>
+                  <input type="text" name="name" placeholder="Как к Вам обращаться?">
+                </div>
+                <div data-width="full sm:half">
+                  <div data-position="relative" style="height: 40px">
+                    <div class="layer flex-col booking-form-messenger">
+                      <input type="radio" name="messenger" id="messenger-email" checked>
+                      <input type="radio" name="messenger" id="messenger-whatsapp">
+                      <input type="radio" name="messenger" id="messenger-telegram">
+                      <label for="messenger-email" data-width="5">
+                        <div class="flex-row flex-items-center flex-content-end" data-cell-spacing="4px">
+                          <div>Email</div>
+                          <div>
+                            <img src="img/gmail.svg" width="32">
+                          </div>
+                        </div>
+                      </label>
+                      <label for="messenger-whatsapp" data-width="5">
+                        <div class="flex-row flex-items-center flex-content-end" data-cell-spacing="4px">
+                          <div>WhatsApp</div>
+                          <div>
+                            <img src="img/whatsapp.svg" width="32">
+                          </div>
+                        </div>
+                      </label>
+                      <label for="messenger-telegram" data-width="5">
+                        <div class="flex-row flex-items-center flex-content-end" data-cell-spacing="4px">
+                          <div>Telegram</div>
+                          <div>
+                            <img src="img/telegram.svg" width="32">
+                          </div>
+                        </div>
+                      </label>
+                      <input type="email" name="email" data-width="7" placeholder="your@email.com">
+                      <input type="phone" name="whatsapp" data-width="7" placeholder="+7 (___) ___-____">
+                      <input type="phone" name="telegram" data-width="7" placeholder="+7 (___) ___-____">
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <button class="button button-primary">Заказать</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

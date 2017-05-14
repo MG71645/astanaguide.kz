@@ -1,5 +1,10 @@
+section {
+  overflow-x: hidden;
+}
+
 #main {
   height: calc(100vh + 160px);
+  min-height: calc(800px + 160px);
   background-image: url(../img/main.jpg);
   background-position: center top;
   background-repeat: no-repeat;/*
@@ -8,14 +13,22 @@
 
 #main .flex-container {
   height: 100vh;
+  min-height: 800px;
 }
 
 .main-navigation {
 }
 
 .main-navigation a {
+  line-height: 1;
   font-weight: 900;
   color: white;
+}
+
+.main-navigation-cta {
+  display: block;
+  padding: 8px 12px;
+  border: 2px solid white;
 }
 
 .main-content {
@@ -25,6 +38,7 @@
   margin-top: 32px;
   margin-bottom: 64px;
   padding: 12px 24px;
+  line-height: 1;
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
@@ -44,6 +58,7 @@
 }
 
 .tour {
+  flex-shrink: 0;
   position: relative;
   width: 239px;
   margin: 0.5px;
@@ -219,19 +234,18 @@
 
 
 
-#book {
+#booking {
   position: relative;
-  height: 100vh;
+  height: 700px;
   background: url(../img/book.png) center top no-repeat;
-  background-size: cover;
-} #book:before {
+} #booking:before {
   content: "";
   display: block;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 25%;
   background : -moz-linear-gradient(50% 100% 90deg,rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 1) 100%);
   background : -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
   background : -webkit-gradient(linear,50% 100% ,50% 0% ,color-stop(0,rgba(255, 255, 255, 0) ),color-stop(1,rgba(255, 255, 255, 1) ));
@@ -240,8 +254,101 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#FFFFFF' ,GradientType=0)";
   background : linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF',endColorstr='#FFFFFF' , GradientType=0);
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
-.book-header {
+.booking-header, .booking-content {
   z-index: 1;
+}
+
+.booking-form {
+  line-height: 40px;
+  padding: 12px;
+  background: white;
+}
+
+.booking-form input {
+  line-height: 40px;
+  max-height: 40px;
+  padding: 0 12px;
+  border: none;
+  font-size: 14px;
+}
+
+.booking-form input[name="name"] {
+  width: 100%;
+  border-right: 1px solid rgba(0,0,0, 0.10);
+}
+
+.booking-form-messenger {
+  flex-wrap: wrap;
+  height: 40px;
+} .booking-form-messenger:hover {
+  height: 120px;
+}
+
+.booking-form-messenger label {
+  padding: 0 12px;
+  background: white;
+} .booking-form-messenger:hover label {
+  display: block !important;
+}
+
+input[name="messenger"] {
+  display: none;
+}
+
+#messenger-email:checked ~ label[for="messenger-email"] {
+  order: 0;
+}
+
+#messenger-email:not(:checked) ~ label[for="messenger-email"] {
+  order: 1;
+  display: none;
+}
+
+#messenger-email:checked ~ input[name="email"] {
+  order: 10;
+}
+
+#messenger-email:not(:checked) ~ input[name="email"] {
+  display: none;
+}
+
+#messenger-whatsapp:checked ~ label[for="messenger-whatsapp"] {
+  order: 0;
+}
+
+#messenger-whatsapp:not(:checked) ~ label[for="messenger-whatsapp"] {
+  order: 2;
+  display: none;
+}
+
+#messenger-whatsapp:checked ~ input[name="whatsapp"] {
+  order: 10
+}
+
+#messenger-whatsapp:not(:checked) ~ input[name="whatsapp"] {
+  display: none;
+}
+
+#messenger-telegram:checked ~ label[for="messenger-telegram"] {
+  order: 0;
+}
+
+#messenger-telegram:not(:checked) ~ label[for="messenger-telegram"] {
+  order: 3;
+  display: none;
+}
+
+#messenger-telegram:checked ~ input[name="telegram"] {
+  order: 10;
+}
+
+#messenger-telegram:not(:checked) ~ input[name="telegram"] {
+  display: none;
 }

@@ -1,0 +1,41 @@
+@media screen and (max-width: 600px) {
+  
+  #main {
+    height: 100vh;
+    min-height: 0;
+    background: url(../img/mobile.jpg) center top no-repeat;
+    background-size: cover;
+  }
+  
+  #main .flex-container {
+    min-height: 0;
+  }
+  
+  h2 {
+    font-size: 32px;
+  }
+  
+  h3 {
+    font-size: 36px;
+  }
+  
+  #tours {
+    margin: 0;
+    padding-top: 0 !important;
+  }
+  
+  .tours-slider {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  
+  .places-hashtag {
+    font-size: 18px;
+  }
+  
+  .booking-form input[name="name"] {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0, 0.10);
+  }
+  
+}
