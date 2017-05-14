@@ -11,8 +11,9 @@ a {
 
 h2 {
   text-align: center;
-  font-family: "Segoe Script", serif;
-  font-size: 48px;
+  font-family: 'Marck Script', cursive;
+  font-size: 64px;
+  line-height: 1;
   font-weight: 300;
   -webkit-transform: rotate(-9deg);
   -moz-transform: rotate(-9deg);
