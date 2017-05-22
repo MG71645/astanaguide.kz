@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="css/flex.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/order.css">
     <link rel="stylesheet" href="css/300.css">
     <link rel="stylesheet" href="css/1200.css">
     <link rel="stylesheet" href="css/animation.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
   </head>
   <body>
     <section id="main" class="flex-row">
@@ -318,7 +321,62 @@
             </div>
           </div>
           <div class="guides-content">
-            <div class="flex-row" data-cell-spacing="8px" data-cell-width="half md:3">
+            <button class="guides-slider-button-previous" disabled>
+              <i class="material-icons">keyboard_arrow_left</i>
+            </button>
+            <div class="flex-row flex-nowrap guides-slider" data-cell-spacing="8px" data-cell-width="half md:3">
+              <div class="guide" id="guide01">
+                <div class="flex-col" data-cell-spacing="8px">
+                  <div>
+                    <div class="guide-photo" data-shape="square"></div>
+                  </div>
+                  <div>
+                    <div class="flex-col" data-cell-spacing="4px">
+                      <div class="guide-name">Rihanna</div>
+                      <div>English, Russian, Turkish</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="guide" id="guide02">
+                <div class="flex-col" data-cell-spacing="8px">
+                  <div>
+                    <div class="guide-photo" data-shape="square"></div>
+                  </div>
+                  <div>
+                    <div class="flex-col" data-cell-spacing="4px">
+                      <div class="guide-name">Jessica</div>
+                      <div>English, Russian, Turkish</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="guide" id="guide03">
+                <div class="flex-col" data-cell-spacing="8px">
+                  <div>
+                    <div class="guide-photo" data-shape="square"></div>
+                  </div>
+                  <div>
+                    <div class="flex-col" data-cell-spacing="4px">
+                      <div class="guide-name">Alba</div>
+                      <div>English, Russian, Turkish</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="guide" id="guide04">
+                <div class="flex-col" data-cell-spacing="8px">
+                  <div>
+                    <div class="guide-photo" data-shape="square"></div>
+                  </div>
+                  <div>
+                    <div class="flex-col" data-cell-spacing="4px">
+                      <div class="guide-name">Beyonce</div>
+                      <div>English, Russian, Turkish</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="guide" id="guide01">
                 <div class="flex-col" data-cell-spacing="8px">
                   <div>
@@ -372,6 +430,9 @@
                 </div>
               </div>
             </div>
+            <button class="guides-slider-button-next">
+              <i class="material-icons">keyboard_arrow_right</i>
+            </button>
           </div>
         </div>
       </div>

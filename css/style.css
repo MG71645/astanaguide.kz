@@ -5,6 +5,10 @@ html {
   color : #424242;
 }
 
+:disabled {
+  opacity: 0.25;
+}
+
 a {
   text-decoration: none;
 }
