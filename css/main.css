@@ -98,27 +98,27 @@ section {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF',endColorstr='#FFFFFF' , GradientType=0);
 }
 
-#tour01 .tour-photo {
+#walkingTour .tour-photo {
   background: url(../img/tours/walking.jpg) center center no-repeat;
   background-size: cover;
 }
 
-#tour02 .tour-photo {
+#halfdayTour .tour-photo {
   background: url(../img/tours/halfday.jpg) center center no-repeat;
   background-size: cover;
 }
 
-#tour03 .tour-photo {
+#fulldayTour .tour-photo {
   background: url(../img/tours/oneday.jpg) center center no-repeat;
   background-size: cover;
 }
 
-#tour04 .tour-photo {
+#riverTour .tour-photo {
   background: url(../img/tours/river.jpg) center center no-repeat;
   background-size: cover;
 }
 
-#tour05 .tour-photo {
+#burabayTour .tour-photo {
   background: url(../img/tours/burabay02.jpg) center center no-repeat;
   background-size: cover;
 }
