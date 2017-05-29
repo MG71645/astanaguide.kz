@@ -15,4 +15,101 @@
     animation: glow 0.5s ease-in-out infinite alternate;
   }
   
+  .tour {
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+  } .tour:hover {
+    z-index: 1;
+    -webkit-transform: scale(1.1) translate3d(0,0,0);
+    -moz-transform: scale(1.1) translate3d(0,0,0);
+    -ms-transform: scale(1.1) translate3d(0,0,0);
+    -o-transform: scale(1.1) translate3d(0,0,0);
+    transform: scale(1.1) translate3d(0,0,0);
+  } .tour:hover:before {
+    z-index: -1;
+  }
+  
+  @keyframes place01 {
+    40% {
+      background: url(../img/places/opera.jpg) center center / cover no-repeat;
+    }
+    50% {
+      background: url(../img/places/night.jpg) center center / cover no-repeat;
+    }
+    90% {
+      background: url(../img/places/night.jpg) center center / cover no-repeat;
+    }
+  }
+
+  #place01 .place-photo {
+    animation: place01 10s linear 4s infinite;
+  }
+  
+  @keyframes place02 {
+    40% {
+      background: url(../img/places/opera-02.jpg) center center / cover no-repeat;
+    }
+    50% {
+      background: url(../img/places/pyramid.jpg) center center / cover no-repeat;
+    }
+    90% {
+      background: url(../img/places/pyramid.jpg) center center / cover no-repeat;
+    }
+  }
+
+  #place02 .place-photo {
+    animation: place02 10s linear 2s infinite;
+  }
+  
+  @keyframes place03 {
+    40% {
+      background: url(../img/places/kmg.jpg) center center / cover no-repeat;
+    }
+    50% {
+      background: url(../img/places/shatyr-02.jpg) center center / cover no-repeat;
+    }
+    90% {
+      background: url(../img/places/shatyr-02.jpg) center center / cover no-repeat;
+    }
+  }
+
+  #place03 .place-photo {
+    animation: place03 10s linear 8s infinite;
+  }
+  
+  @keyframes place04 {
+    40% {
+      background: url(../img/places/shatyr.jpg) center center / cover no-repeat;
+    }
+    50% {
+      background: url(../img/places/hazretsultan.jpg) center center / cover no-repeat;
+    }
+    90% {
+      background: url(../img/places/hazretsultan.jpg) center center / cover no-repeat;
+    }
+  }
+
+  #place04 .place-photo {
+    animation: place04 10s linear 6s infinite;
+  }
+  
+  @keyframes place05 {
+    40% {
+      background: url(../img/places/bayterek.jpg) center center / cover no-repeat;
+    }
+    50% {
+      background: url(../img/places/esil-01.jpg) center center / cover no-repeat;
+    }
+    90% {
+      background: url(../img/places/esil-01.jpg) center center / cover no-repeat;
+    }
+  }
+
+  #place05 .place-photo {
+    animation: place05 10s linear 10s infinite;
+  }
+  
 }

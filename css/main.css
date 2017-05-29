@@ -58,6 +58,7 @@ section {
 }
 
 .tour {
+  cursor: pointer;
   flex-shrink: 0;
   position: relative;
   width: 239px;
@@ -132,6 +133,15 @@ section {
   font-size: 18px;
   font-weight: 700;
   color : #424242;
+} .tour-title span {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: red;
+  color: white;
 }
 
 .tour-description {
@@ -160,12 +170,12 @@ section {
 }
 
 #place01 .place-photo {
-  background: url(../img/places/opera.png) center center no-repeat;
+  background: url(../img/places/opera.jpg) center center no-repeat;
   background-size: cover;
 }
 
 #place02 .place-photo {
-  background: url(../img/places/pyramid.png) center center no-repeat;
+  background: url(../img/places/opera-02.jpg) center center no-repeat;
   background-size: cover;
 }
 
@@ -274,6 +284,26 @@ section {
 
 #guide04 .guide-photo {
   background: url(../img/guides/04.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#guide05 .guide-photo {
+  background: url(../img/guides/05.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#guide06 .guide-photo {
+  background: url(../img/guides/06.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#guide07 .guide-photo {
+  background: url(../img/guides/07.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#guide08 .guide-photo {
+  background: url(../img/guides/08.jpg) center center no-repeat;
   background-size: cover;
 }
 
