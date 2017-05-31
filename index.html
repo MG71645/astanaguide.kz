@@ -40,7 +40,7 @@
     <section id="tours" data-padding="64y xs:32y">
       <div class="flex-container">
         <div class="flex-row tours-slider">
-          <div class="tour flex-col" id="walkingTour">
+          <a href="#booking" class="tour flex-col" id="walkingTour">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -89,8 +89,8 @@ Duration: 2-3 hours
                 </div>
               </div>
             </div>
-          </div>
-          <div class="tour flex-col" id="halfdayTour">
+          </a>
+          <a href="#booking" class="tour flex-col" id="halfdayTour">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -136,8 +136,8 @@ Duration: 2-3 hours
                 </div>
               </div>
             </div>
-          </div>
-          <div class="tour flex-col" id="fulldayTour">
+          </a>
+          <a href="#booking" class="tour flex-col" id="fulldayTour">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -190,8 +190,8 @@ Duration: 4-5 hours
                 </div>
               </div>
             </div>
-          </div>
-          <div class="tour flex-col" id="riverTour">
+          </a>
+          <a href="#booking" class="tour flex-col" id="riverTour">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -240,8 +240,8 @@ Duration: 4-5 hours
                 </div>
               </div>
             </div>
-          </div>
-          <div class="tour flex-col" id="burabayTour">
+          </a>
+          <a href="#booking" class="tour flex-col" id="burabayTour">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -289,7 +289,7 @@ Duration: 9-10 hours
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -478,18 +478,22 @@ Guides
             <button class="guides-slider-button-previous" disabled>
               <i class="material-icons">keyboard_arrow_left</i>
             </button>
-            <div class="flex-row flex-nowrap guides-slider" data-cell-spacing="8px" data-cell-width="half md:3">
+            <div class="flex-row flex-nowrap guides-slider" data-cell-spacing="16px" data-cell-width="half md:3">
               <div class="guide" id="guide01">
                 <div class="flex-col" data-cell-spacing="8px">
                   <div>
                     <div class="guide-photo" data-shape="square"></div>
                   </div>
                   <div>
-                    <div class="flex-col" data-cell-spacing="4px">
+                    <div class="flex-row" data-cell-spacing="4px" data-align-content="justify">
                       <div class="guide-name">
 Abylay
                       </div>
-                      <div>English, Russian, Turkish</div>
+                      <div>
+                        <img src="img/flags/english.png" title="English Language" width="35">
+                        <img src="img/flags/russian.png" title="Russian Language" width="35">
+                        <img src="img/flags/turkish.png" title="Turkish Language" width="35">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -500,11 +504,15 @@ Abylay
                     <div class="guide-photo" data-shape="square"></div>
                   </div>
                   <div>
-                    <div class="flex-col" data-cell-spacing="4px">
+                    <div class="flex-row" data-cell-spacing="4px" data-align-content="justify">
                       <div class="guide-name">
 Tolkyn
                       </div>
-                      <div>English, Russian, French</div>
+                      <div>
+                        <img src="img/flags/english.png" title="English Language" width="35">
+                        <img src="img/flags/russian.png" title="Russian Language" width="35">
+                        <img src="img/flags/french.png" title="French Language" width="35">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -515,11 +523,15 @@ Tolkyn
                     <div class="guide-photo" data-shape="square"></div>
                   </div>
                   <div>
-                    <div class="flex-col" data-cell-spacing="4px">
+                    <div class="flex-row" data-cell-spacing="4px" data-align-content="justify">
                       <div class="guide-name">
 Diyar
                       </div>
-                      <div>English, Russian, Korean</div>
+                      <div>
+                        <img src="img/flags/english.png" title="English Language" width="35">
+                        <img src="img/flags/russian.png" title="Russian Language" width="35">
+                        <img src="img/flags/korean.png" title="Korean Language" width="35">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -530,11 +542,15 @@ Diyar
                     <div class="guide-photo" data-shape="square"></div>
                   </div>
                   <div>
-                    <div class="flex-col" data-cell-spacing="4px">
+                    <div class="flex-row" data-cell-spacing="4px" data-align-content="justify">
                       <div class="guide-name">
 Meruert
                       </div>
-                      <div>English, Russian, Chinese</div>
+                      <div>
+                        <img src="img/flags/english.png" title="English Language" width="35">
+                        <img src="img/flags/russian.png" title="Russian Language" width="35">
+                        <img src="img/flags/chinese.png" title="Chinese Language" width="35">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -545,11 +561,15 @@ Meruert
                     <div class="guide-photo" data-shape="square"></div>
                   </div>
                   <div>
-                    <div class="flex-col" data-cell-spacing="4px">
+                    <div class="flex-row" data-cell-spacing="4px" data-align-content="justify">
                       <div class="guide-name">
 Nurym
                       </div>
-                      <div>English, Russian, Turkish</div>
+                      <div>
+                        <img src="img/flags/english.png" title="English Language" width="35">
+                        <img src="img/flags/russian.png" title="Russian Language" width="35">
+                        <img src="img/flags/turkish.png" title="Turkish Language" width="35">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -560,11 +580,15 @@ Nurym
                     <div class="guide-photo" data-shape="square"></div>
                   </div>
                   <div>
-                    <div class="flex-col" data-cell-spacing="4px">
+                    <div class="flex-row" data-cell-spacing="4px" data-align-content="justify">
                       <div class="guide-name">
 Bayan
                       </div>
-                      <div>English, Russian, Arabic</div>
+                      <div>
+                        <img src="img/flags/english.png" title="English Language" width="35">
+                        <img src="img/flags/russian.png" title="Russian Language" width="35">
+                        <img src="img/flags/arabic.png" title="Arabic Language" width="35">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -575,11 +599,15 @@ Bayan
                     <div class="guide-photo" data-shape="square"></div>
                   </div>
                   <div>
-                    <div class="flex-col" data-cell-spacing="4px">
+                    <div class="flex-row" data-cell-spacing="4px" data-align-content="justify">
                       <div class="guide-name">
 Abzal
                       </div>
-                      <div>English, Russian, Italian</div>
+                      <div>
+                        <img src="img/flags/english.png" title="English Language" width="35">
+                        <img src="img/flags/russian.png" title="Russian Language" width="35">
+                        <img src="img/flags/italian.png" title="Italian Language" width="35">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -590,11 +618,15 @@ Abzal
                     <div class="guide-photo" data-shape="square"></div>
                   </div>
                   <div>
-                    <div class="flex-col" data-cell-spacing="4px">
+                    <div class="flex-row" data-cell-spacing="4px" data-align-content="justify">
                       <div class="guide-name">
 Gaukhar
                       </div>
-                      <div>English, Russian, Spanish</div>
+                      <div>
+                        <img src="img/flags/english.png" title="English Language" width="35">
+                        <img src="img/flags/russian.png" title="Russian Language" width="35">
+                        <img src="img/flags/spanish.png" title="Spanish Language" width="35">
+                      </div>
                     </div>
                   </div>
                 </div>
