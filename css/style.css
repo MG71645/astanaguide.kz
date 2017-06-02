@@ -6,6 +6,7 @@ html {
 }
 
 :disabled {
+  cursor: not-allowed;
   opacity: 0.25;
 }
 
@@ -42,4 +43,21 @@ h3 {
   display: block;
   width: 1px;
   background-color: rgba(0,0,0, 0.10);
+}
+
+input {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: #bbb;
+}
+::-moz-placeholder {
+  color: #bbb;
+}
+:-ms-input-placeholder {
+  color: #bbb;
+}
+:-moz-placeholder {
+  color: #bbb;
 }

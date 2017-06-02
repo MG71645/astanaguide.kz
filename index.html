@@ -15,6 +15,38 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
   </head>
+  <script>
+    function sendForm(url) {
+        if ( $('#booking-form-button').hasClass('used') ) {
+        } else {
+            console.log($('#booking-form input[name="email"]').val());
+            if ( $('#booking-form input[name="email"]').val() || $('#booking-form input[name="whatsapp"]').val() || $('#booking-form input[name="telegram"]').val() ) {
+                    $('#booking-form-button').prop('disabled', true);
+                    $('#booking-form-button').html('Booking...');
+                    jQuery.ajax({
+                        url: url,
+                        type: "POST",
+                        dataType: "html",
+                        data: jQuery("#booking-form").serialize(),
+                        success: function(response) {
+                            setTimeout( function() {
+                                $('#booking-form-button').html('Done!');
+                            }, 1000 );
+                        },
+                        error: function(response) {
+                            $('#popup_main_cta').html('Try again!');
+                            setTimeout( function() {
+                                $('#booking-form-button').prop('disabled', false);
+                                $('#booking-form-button').prop('value', 'Book now');
+                            }, 1000 );
+                        }
+                    });
+            } else {
+                alert('Please give us your email, whatsapp or telegram');
+            }
+        }
+    }
+  </script>
   <body>
     <section id="main" class="flex-row">
       <div class="flex-container" data-align-content="justify">
@@ -651,7 +683,7 @@ Book a Tour
             </div>
           </div>
           <div class="booking-content flex-col flex-items-center">
-            <form class="booking-form flex-full flex-lg-8">
+            <form class="booking-form flex-full flex-lg-8" id="booking-form">
               <div data-cell-width="full sm:3" data-display="col sm: row" data-cell-spacing="8px">
                 <div>
                   <input type="text" name="name" placeholder="
@@ -688,14 +720,20 @@ Your name
                           </div>
                         </div>
                       </label>
-                      <input type="email" name="email" data-width="7" placeholder="your@email.com">
-                      <input type="phone" name="whatsapp" data-width="7" placeholder="+7 (___) ___-____">
-                      <input type="phone" name="telegram" data-width="7" placeholder="+7 (___) ___-____">
+                      <input type="email" name="email" data-width="7" placeholder="
+Your email
+                                                                                   ">
+                      <input type="tel" name="whatsapp" data-width="7" placeholder="
+Your whatsapp
+                                                                                    ">
+                      <input type="text" name="telegram" data-width="7" placeholder="
+Your telegram
+                                                                                     ">
                     </div>
                   </div>
                 </div>
                 <div class="flex-col">
-                  <button class="button button-primary">
+                  <button type="button" class="button button-primary" id="booking-form-button" onclick="sendForm('swift.php')">
 Book now
                   </button>
                 </div>
