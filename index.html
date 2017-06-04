@@ -60,7 +60,7 @@
           url: url,
           type: "POST",
           dataType: "html",
-          data: jQuery("#bookingModal").serialize(),
+          data: jQuery("#bookingModal-form").serialize(),
           success: function(response) {
             setTimeout( function() {
               openModal('success');
