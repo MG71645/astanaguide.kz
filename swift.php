@@ -6,15 +6,17 @@
     require_once 'swift/lib/swift_required.php';
     
     
+    $tour = $_POST["tour"];
     $name = $_POST["name"];
     $email = $_POST["email"];
     $whatsapp = $_POST["whatsapp"];
     $telegram = $_POST["telegram"];
+    $seats = $_POST["seats"];
     
     $login = "landing@astanaguide.kz";
     $password = "l12341234";
     $sendFrom = array("landing@astanaguide.kz" => "astanaguide.kz");
-    $sendTo = array('mg71645@gmail.com');
+    $sendTo = array('mg71645@gmail.com', 'shaikhov.abl91@gmail.com');
     
     
     $date = new DateTime('now', new DateTimeZone('Asia/Almaty'));
@@ -29,10 +31,13 @@
         
         $mailer = Swift_Mailer::newInstance($transport);
         
-        $message = "<b>Имя:</b> $name<br>";
+        $message = "";
+        if($tour) $message .= "<b>Тур:</b> $tour<br>";
+        if($name) $message .= "<b>Имя:</b> $name<br>";
         if($email) $message .= "<b>Email:</b> $email<br>";
         if($whatsapp) $message .= "<b>WhatsApp:</b> $whatsapp<br>";
         if($telegram) $message .= "<b>Telegram:</b> $telegram<br>";
+        if($seats) $message .= "<b>Мест:</b> $seats<br>";
         
         $message_send = Swift_Message::newInstance("$date - $name")
             ->setFrom($sendFrom)

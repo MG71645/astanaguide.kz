@@ -1,0 +1,100 @@
+<div class="flex-row" id="bookingModal">
+  <button class="modalCloseButton" onclick="closeModal()">
+    <i class="material-icons" data-padding="16px">close</i>
+  </button>
+  <div class="flex-half" style="background: url(/img/modal-book.jpg) center / cover no-repeat">
+  
+  </div>
+  <div class="flex-col flex-half">
+    <h4 data-padding="32px">Book a Tour</h4>
+    <form data-padding="32px">
+      <div class="flex-col" data-cell-spacing="8px">
+        <div class="flex-col">
+          <select class="input" name="tour" onchange="getPrices()">
+            <option value="walking">Walking Tour</option>
+            <option value="halfday">Half-Day Tour</option>
+            <option value="fullday">Full-Day Tour</option>
+            <option value="river">River Boat Tour</option>
+            <option value="burabay">Burabay Tour</option>
+          </select>
+        </div>
+        <div class="flex-col">
+          <input class="input" type="text" name="name" placeholder="
+Your name
+                                                      ">
+        </div>
+        <div>
+          <div data-position="relative" style="height: 40px">
+            <div class="layer flex-col booking-form-contact">
+              <input type="radio" name="contact" id="contact-email" checked>
+              <input type="radio" name="contact" id="contact-whatsapp">
+              <input type="radio" name="contact" id="contact-telegram">
+              <label for="contact-email" data-width="5">
+                <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
+                  <div class="flex-shrink ellipsis">Email</div>
+                  <div>
+                    <img src="img/gmail.svg" width="32">
+                  </div>
+                </div>
+              </label>
+              <label for="contact-whatsapp" data-width="5">
+                <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
+                  <div class="flex-shrink ellipsis">WhatsApp</div>
+                  <div>
+                    <img src="img/whatsapp.svg" width="32">
+                  </div>
+                </div>
+              </label>
+              <label for="contact-telegram" data-width="5">
+                <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
+                  <div class="flex-shrink ellipsis">Telegram</div>
+                  <div>
+                    <img src="img/telegram.svg" width="32">
+                  </div>
+                </div>
+              </label>
+              <input class="input" type="email" name="email" data-width="7" placeholder="
+Your email
+                                                                           ">
+              <input class="input" type="tel" name="whatsapp" data-width="7" placeholder="
+Your whatsapp
+                                                                            ">
+              <input class="input" type="text" name="telegram" data-width="7" placeholder="
+Your telegram
+                                                                             ">
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row flex-nowrap">
+            <input type="radio" name="seats" id="seats3" value="3" checked>
+            <label for="seats3" class="flex-full flex-grow">
+              <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                <div class="ellipsis">
+1-3 seats
+                </div>
+                <div class="tour-price">
+                  <span class="seats-3"></span> $
+                </div>
+              </div>
+            </label>
+            <input type="radio" name="seats" id="seats4" value="4">
+            <label for="seats4" class="flex-full flex-grow">
+              <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                <div class="ellipsis">
+4 seats
+                </div>
+                <div class="tour-price">
+                  <span class="seats-4"></span> $
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="flex-col">
+          <button type="button" id="bookingModal-button" class="button button-primary modal-button flex-grow" onclick="sendForm2('swift.php')">Book Now</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

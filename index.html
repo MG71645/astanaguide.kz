@@ -12,39 +12,101 @@
     <link rel="stylesheet" href="css/300.css">
     <link rel="stylesheet" href="css/1200.css">
     <link rel="stylesheet" href="css/animation.css">
+    <link rel="import" id="walking" href="/tours/walking.html">
+    <link rel="import" id="halfday" href="/tours/halfday.html">
+    <link rel="import" id="fullday" href="/tours/fullday.html">
+    <link rel="import" id="river" href="/tours/river.html">
+    <link rel="import" id="burabay" href="/tours/burabay.html">
+    <link rel="import" id="booking" href="/booking.html">
+    <link rel="import" id="success" href="/success.html">
+    <link rel="stylesheet" href="css/booking.css">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
   </head>
   <script>
     function sendForm(url) {
-        if ( $('#booking-form-button').hasClass('used') ) {
-        } else {
-            console.log($('#booking-form input[name="email"]').val());
-            if ( $('#booking-form input[name="email"]').val() || $('#booking-form input[name="whatsapp"]').val() || $('#booking-form input[name="telegram"]').val() ) {
-                    $('#booking-form-button').prop('disabled', true);
-                    $('#booking-form-button').html('Booking...');
-                    jQuery.ajax({
-                        url: url,
-                        type: "POST",
-                        dataType: "html",
-                        data: jQuery("#booking-form").serialize(),
-                        success: function(response) {
-                            setTimeout( function() {
-                                $('#booking-form-button').html('Done!');
-                            }, 1000 );
-                        },
-                        error: function(response) {
-                            $('#popup_main_cta').html('Try again!');
-                            setTimeout( function() {
-                                $('#booking-form-button').prop('disabled', false);
-                                $('#booking-form-button').prop('value', 'Book now');
-                            }, 1000 );
-                        }
-                    });
-            } else {
-                alert('Please give us your email, whatsapp or telegram');
-            }
-        }
+      if ( $('#booking-form input[name="email"]').val() || $('#booking-form input[name="whatsapp"]').val() || $('#booking-form input[name="telegram"]').val() ) {
+        $('#booking-form-button').prop('disabled', true);
+        $('#booking-form-button').html('Booking...');
+        jQuery.ajax({
+          url: url,
+          type: "POST",
+          dataType: "html",
+          data: jQuery("#booking-form").serialize(),
+          success: function(response) {
+            setTimeout( function() {
+              openModal('success');
+            }, 1000 );
+          },
+          error: function(response) {
+            $('#popup_main_cta').html('Try again!');
+            setTimeout( function() {
+              $('#booking-form-button').prop('disabled', false);
+              $('#booking-form-button').prop('value', 'Book now');
+            }, 1000 );
+          }
+        });
+      } else {
+        alert('Please give us your email, whatsapp or telegram');
+      }
+    }
+  </script>
+  <script>
+    function sendForm2(url) {
+      if ( $('#bookingModal input[name="email"]').val() || $('#bookingModal input[name="whatsapp"]').val() || $('#bookingModal input[name="telegram"]').val() ) {
+        $('#bookingModal-button').prop('disabled', true);
+        $('#bookingModal-button').html('Booking...');
+        jQuery.ajax({
+          url: url,
+          type: "POST",
+          dataType: "html",
+          data: jQuery("#bookingModal").serialize(),
+          success: function(response) {
+            setTimeout( function() {
+              openModal('success');
+            }, 1000 );
+          },
+          error: function(response) {
+            $('#bookingModal-button').html('Try again!');
+            setTimeout( function() {
+              $('#bookingModal-button').prop('disabled', false);
+              $('#bookingModal-button').prop('value', 'Book now');
+            }, 1000 );
+          }
+        });
+      } else {
+        alert('Please give us your email, whatsapp or telegram');
+      }
+    }
+  </script>
+  <script>
+    function openModal(id) {
+      $('#modal-body').html('');
+      var link = document.querySelector('link[id="' + id + '"]');
+      var content = link.import.querySelector('div');
+      $('#modal-body').append(content.cloneNode(true));
+      setPrices();
+      $('html').css('overflow', 'hidden');
+      $('#modal').css('overflow', 'auto');
+      $('#modal').removeClass('hidden');
+      setTimeout( function() {
+        $('#modal').addClass('show');
+      }, 1 );
+    }
+    function closeModal() {
+      $('html').css('overflow', 'auto');
+      $('#modal').css('overflow', 'hidden');
+      $('#modal').removeClass('show');
+      setTimeout( function() {
+        $('#modal').addClass('hidden');
+      }, 500 );
+    }
+  </script>
+  <script>
+    function book(tour) {
+      openModal('booking');
+      if (tour) { $('#bookingModal select').val(tour) };
+      getPrices();
     }
   </script>
   <body>
@@ -57,7 +119,7 @@
             <a href="#advantages">Advantages</a>
             <a href="#guides">Guides</a>
             <div>
-              <a href="#booking" class="main-navigation-cta">Book now</a>
+              <a class="main-navigation-cta" onclick="book()">Book now</a>
             </div>
           </div>
         </div>
@@ -72,7 +134,7 @@
     <section id="tours" data-padding="64y xs:32y">
       <div class="flex-container">
         <div class="flex-row tours-slider">
-          <a href="#booking" class="tour flex-col" id="walkingTour">
+          <a class="tour flex-col" id="walkingTour" onclick="openModal('walking')">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -102,7 +164,7 @@ Duration: 2-3 hours
 1-3 seats
                         </div>
                         <div class="tour-price">
-92 $
+                          <span class="walking-3"></span> $
                         </div>
                       </div>
                     </div>
@@ -113,7 +175,7 @@ Duration: 2-3 hours
 4 seats
                         </div>
                         <div class="tour-price">
-99 $
+                          <span class="walking-4"></span> $
                         </div>
                       </div>
                     </div>
@@ -122,7 +184,7 @@ Duration: 2-3 hours
               </div>
             </div>
           </a>
-          <a href="#booking" class="tour flex-col" id="halfdayTour">
+          <a class="tour flex-col" id="halfdayTour" onclick="openModal('halfday')">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -149,7 +211,7 @@ Duration: 2-3 hours
                       <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
                         <div>1-3 seats</div>
                         <div class="tour-price">
-94 $
+                          <span class="halfday-3"></span> $
                         </div>
                       </div>
                     </div>
@@ -160,7 +222,7 @@ Duration: 2-3 hours
 4 seats
                         </div>
                         <div class="tour-price">
-101 $
+                          <span class="halfday-4"></span> $
                         </div>
                       </div>
                     </div>
@@ -169,7 +231,7 @@ Duration: 2-3 hours
               </div>
             </div>
           </a>
-          <a href="#booking" class="tour flex-col" id="fulldayTour">
+          <a class="tour flex-col" id="fulldayTour" onclick="openModal('fullday')">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -203,7 +265,7 @@ Duration: 4-5 hours
 1-3 seats
                         </div>
                         <div class="tour-price">
-162 $
+                          <span class="fullday-3"></span> $
                         </div>
                       </div>
                     </div>
@@ -214,7 +276,7 @@ Duration: 4-5 hours
 4 seats
                         </div>
                         <div class="tour-price">
-173 $
+                          <span class="fullday-4"></span> $
                         </div>
                       </div>
                     </div>
@@ -223,7 +285,7 @@ Duration: 4-5 hours
               </div>
             </div>
           </a>
-          <a href="#booking" class="tour flex-col" id="riverTour">
+          <a class="tour flex-col" id="riverTour" onclick="openModal('river')">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -253,7 +315,7 @@ Duration: 4-5 hours
 1-3 seats
                         </div>
                         <div class="tour-price">
-160 $
+                          <span class="river-3"></span> $
                         </div>
                       </div>
                     </div>
@@ -264,7 +326,7 @@ Duration: 4-5 hours
 4 seats
                         </div>
                         <div class="tour-price">
-173 $
+                          <span class="river-4"></span> $
                         </div>
                       </div>
                     </div>
@@ -273,12 +335,12 @@ Duration: 4-5 hours
               </div>
             </div>
           </a>
-          <a href="#booking" class="tour flex-col" id="burabayTour">
+          <a class="tour flex-col" id="burabayTour" onclick="openModal('burabay')">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
                 <div class="tour-title">
-Burabai Tour
+Burabay Tour
                 </div>
                 <div class="flex-grow">
                   <div class="tour-description">
@@ -302,7 +364,7 @@ Duration: 9-10 hours
 1-3 seats
                         </div>
                         <div class="tour-price">
-354 $
+                          <span class="burabay-3"></span> $
                         </div>
                       </div>
                     </div>
@@ -313,7 +375,7 @@ Duration: 9-10 hours
 4 seats
                         </div>
                         <div class="tour-price">
-362 $
+                          <span class="burabay-4"></span> $
                         </div>
                       </div>
                     </div>
@@ -733,7 +795,7 @@ Your telegram
                   </div>
                 </div>
                 <div class="flex-col">
-                  <button type="button" class="button button-primary" id="booking-form-button" onclick="sendForm('swift.php')">
+                  <button type="button" class="button button-primary flex-grow" id="booking-form-button" onclick="sendForm('swift.php')">
 Book now
                   </button>
                 </div>
@@ -743,5 +805,11 @@ Book now
         </div>
       </div>
     </section>
+    <div id="modal" class="hidden" data-padding="0 md:32px">
+      <div id="modal-fade" onclick="closeModal()"></div>
+      <div id="modal-body" data-position="relative">
+      
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,84 @@
+.booking-form-contact {
+  flex-wrap: wrap;
+  height: 40px;
+} .booking-form-contact:hover {
+  height: 120px;
+}
+
+.booking-form-contact label {
+  display: flex;
+  height: 40px;
+  padding: 0 12px;
+  background: white;
+} .booking-form-contact:hover label {
+  display: flex !important;
+}
+
+input[name="contact"] {
+  display: none;
+}
+
+#contact-email:checked ~ label[for="contact-email"] {
+  order: 0;
+}
+
+#contact-email:not(:checked) ~ label[for="contact-email"] {
+  order: 1;
+  display: none;
+}
+
+#contact-email:checked ~ input[name="email"] {
+  order: 10;
+}
+
+#contact-email:not(:checked) ~ input[name="email"] {
+  display: none;
+}
+
+#contact-whatsapp:checked ~ label[for="contact-whatsapp"] {
+  order: 0;
+}
+
+#contact-whatsapp:not(:checked) ~ label[for="contact-whatsapp"] {
+  order: 2;
+  display: none;
+}
+
+#contact-whatsapp:checked ~ input[name="whatsapp"] {
+  order: 10
+}
+
+#contact-whatsapp:not(:checked) ~ input[name="whatsapp"] {
+  display: none;
+}
+
+#contact-telegram:checked ~ label[for="contact-telegram"] {
+  order: 0;
+}
+
+#contact-telegram:not(:checked) ~ label[for="contact-telegram"] {
+  order: 3;
+  display: none;
+}
+
+#contact-telegram:checked ~ input[name="telegram"] {
+  order: 10;
+}
+
+#contact-telegram:not(:checked) ~ input[name="telegram"] {
+  display: none;
+}
+
+input[name="seats"] {
+  display: none;
+}
+
+input[name="seats"] + label {
+  padding: 16px;
+} input[name="seats"]:checked + label {
+  box-shadow: 0 0 0 2px #2196F3 inset;
+}
+
+.modal-button {
+  height: 48px;
+}

@@ -36,6 +36,20 @@ h3 {
   font-weight: 700;
 }
 
+h4 {
+  margin: 0;
+  line-height: 1;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h5 {
+  margin: 0;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .vertical {
   display: flex;
 }.vertical:after {
@@ -45,8 +59,15 @@ h3 {
   background-color: rgba(0,0,0, 0.10);
 }
 
-input {
+input, select {
   outline: none;
+}
+
+.input {
+  flex-grow: 0;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 12px;
 }
 
 ::-webkit-input-placeholder {

@@ -12,6 +12,10 @@
 @media screen and (min-width: 600px) {
   
   .main-content-cta {
+    -webkit-animation: glow 0.5s ease-in-out infinite alternate;
+    -moz-animation: glow 0.5s ease-in-out infinite alternate;
+    -ms-animation: glow 0.5s ease-in-out infinite alternate;
+    -o-animation: glow 0.5s ease-in-out infinite alternate;
     animation: glow 0.5s ease-in-out infinite alternate;
   }
   
@@ -32,6 +36,48 @@
     z-index: -1;
   }
   
+  #modal-fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in;
+    -moz-transition: opacity 0.5s ease-in;
+    -ms-transition: opacity 0.5s ease-in;
+    -o-transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in;
+  } #modal.show #modal-fade {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+  }
+  
+  #modal-body {
+    opacity: 0;
+    -webkit-transform: translateY(32px);
+    -moz-transform: translateY(32px);
+    -ms-transform: translateY(32px);
+    -o-transform: translateY(32px);
+    transform: translateY(32px);
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+  } #modal.show #modal-body {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  
   @keyframes place01 {
     40% {
       background: url(../img/places/opera.jpg) center center / cover no-repeat;
@@ -45,6 +91,10 @@
   }
 
   #place01 .place-photo {
+    -webkit-animation: place01 10s linear 4s infinite;
+    -moz-animation: place01 10s linear 4s infinite;
+    -ms-animation: place01 10s linear 4s infinite;
+    -o-animation: place01 10s linear 4s infinite;
     animation: place01 10s linear 4s infinite;
   }
   
@@ -61,6 +111,10 @@
   }
 
   #place02 .place-photo {
+    -webkit-animation: place02 10s linear 2s infinite;
+    -moz-animation: place02 10s linear 2s infinite;
+    -ms-animation: place02 10s linear 2s infinite;
+    -o-animation: place02 10s linear 2s infinite;
     animation: place02 10s linear 2s infinite;
   }
   
@@ -77,6 +131,10 @@
   }
 
   #place03 .place-photo {
+    -webkit-animation: place03 10s linear 8s infinite;
+    -moz-animation: place03 10s linear 8s infinite;
+    -ms-animation: place03 10s linear 8s infinite;
+    -o-animation: place03 10s linear 8s infinite;
     animation: place03 10s linear 8s infinite;
   }
   
@@ -93,6 +151,10 @@
   }
 
   #place04 .place-photo {
+    -webkit-animation: place04 10s linear 6s infinite;
+    -moz-animation: place04 10s linear 6s infinite;
+    -ms-animation: place04 10s linear 6s infinite;
+    -o-animation: place04 10s linear 6s infinite;
     animation: place04 10s linear 6s infinite;
   }
   
@@ -109,6 +171,10 @@
   }
 
   #place05 .place-photo {
+    -webkit-animation: place05 10s linear 10s infinite;
+    -moz-animation: place05 10s linear 10s infinite;
+    -ms-animation: place05 10s linear 10s infinite;
+    -o-animation: place05 10s linear 10s infinite;
     animation: place05 10s linear 10s infinite;
   }
   
