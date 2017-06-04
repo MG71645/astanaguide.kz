@@ -460,6 +460,17 @@ input[name="messenger"] {
 
 
 
+#footer {
+}
+
+#footer a {
+  color: inherit;
+}
+
+
+
+
+
 #modal {
   position: fixed;
   top: 0;
