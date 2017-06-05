@@ -337,7 +337,7 @@ section {
 
 #booking {
   position: relative;
-  height: 700px;
+  height: 600px;
   background: url(../img/book.jpg) center top no-repeat;
 } #booking:before {
   content: "";
