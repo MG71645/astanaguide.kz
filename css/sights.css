@@ -1,0 +1,14 @@
+.sights-menu-link {
+  cursor: pointer;
+} .sights-menu-link.-active {
+  position: relative;
+  color: #0157a5;
+}.sights-menu-link.-active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -8px;
+  bottom: 0;
+  width: 4px;
+  background: #0157a5;
+}

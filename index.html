@@ -1,5 +1,7 @@
 <html>
   <head>
+    <title>Astana Guide</title>
+    <meta name="description" content="Tours in Astana. Guide service">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
@@ -12,6 +14,7 @@
     <link rel="stylesheet" href="css/300.css">
     <link rel="stylesheet" href="css/1200.css">
     <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/booking.css">
     <link rel="import" id="walking" href="/tours/walking.html">
     <link rel="import" id="halfday" href="/tours/halfday.html">
     <link rel="import" id="fullday" href="/tours/fullday.html">
@@ -19,7 +22,7 @@
     <link rel="import" id="burabay" href="/tours/burabay.html">
     <link rel="import" id="booking" href="/booking.html">
     <link rel="import" id="success" href="/success.html">
-    <link rel="stylesheet" href="css/booking.css">
+    <link rel="import" id="footer" href="/footer.html">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
   </head>
@@ -109,7 +112,12 @@
       getPrices();
     }
   </script>
-  <body data-position="relative">
+  <script>
+    function getFooter() {
+      $('footer').append(document.getElementById('footer').import.querySelector('div'));
+    }
+  </script>
+  <body data-position="relative" onload="getFooter()">
     <section id="main" class="flex-row">
       <div class="flex-container" data-align-content="justify">
         <div class="main-navigation" data-padding="16x 24y lg:0x lg:64y">
@@ -430,6 +438,11 @@ Sights
                 </div>
               </div>
             </div>
+          </div>
+          <div class="flex-row" data-align-content="center">
+            <a class="button button-primary" href="sights.html">
+See all sights
+            </a>
           </div>
           <div class="places-hashtag flex-col flex-items-center" data-text-align="center">
             <div class="flex-full flex-md-8" data-padding="16x lg:0x">
@@ -809,55 +822,7 @@ Book now
         </div>
       </div>
     </section>
-    <section id="footer">
-      <div class="flex-container" data-padding="16y 16x lg:0x">
-        <div class="flex-row flex-items-center" data-align-content="justify">
-          <div>
-            <div data-cell-spacing="8px" data-display="col sm: row" data-align-items="sm: center">
-              <a href="mailto:info@astanaguide.kz" title="
-Write email
-                                                          ">
-                <div class="flex-row flex-items-center" data-cell-spacing="4px">
-                  <div>
-                    <img src="img/gmail.svg" width="32">
-                  </div>
-                  <div>info@astanaguide.kz</div>
-                </div>
-              </a>
-              <div>
-                <div class="flex-row flex-items-center" data-cell-spacing="4px">
-                  <div>
-                    <img src="img/whatsapp.svg" width="32">
-                  </div>
-                  <div>+7 778 948 4224</div>
-                </div>
-              </div>
-              <div>
-                <div class="flex-row flex-items-center" data-cell-spacing="4px">
-                  <div>
-                    <img src="img/telegram.svg" width="32">
-                  </div>
-                  <div>+7 778 948 4224</div>
-                </div>
-              </div>
-              <a href="https://www.instagram.com/astanaguide.kz/" target="_blank" title="
-Open in Instagram
-                                                                                         ">
-                <div class="flex-row flex-items-center" data-cell-spacing="4px">
-                  <div>
-                    <img src="img/instagram.svg" width="32">
-                  </div>
-                  <div>astanaguide.kz</div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div>
-            <img src="img/logo.svg" width="96">
-          </div>
-        </div>
-      </div>
-    </section>
+    <footer></footer>
     <div id="modal" class="hidden" data-padding="0 md:32px">
       <div id="modal-fade" onclick="closeModal()"></div>
       <div id="modal-body" data-position="relative">

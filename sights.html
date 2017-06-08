@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/flex.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/300.css">
+    <link rel="stylesheet" href="css/1200.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="css/sights.css">
+    <link rel="import" id="independence" href="/sights/independence.html">
+    <link rel="import" id="qazaqeli" href="/sights/qazaqeli.html">
+    <link rel="import" id="khazretsultan" href="/sights/khazretsultan.html">
+    <link rel="import" id="pyramid" href="/sights/pyramid.html">
+    <link rel="import" id="bayterek" href="/sights/bayterek.html">
+    <link rel="import" id="nurlyzhol" href="/sights/nurlyzhol.html">
+    <link rel="import" id="kmg" href="/sights/kmg.html">
+    <link rel="import" id="opera" href="/sights/opera.html">
+    <link rel="import" id="shatyr" href="/sights/shatyr.html">
+    <link rel="import" id="mainsquare" href="/sights/mainsquare.html">
+    <link rel="import" id="embankment" href="/sights/embankment.html">
+    <link rel="import" id="ishym" href="/sights/ishym.html">
+    <link rel="import" id="presidentmuseum" href="/sights/presidentmuseum.html">
+    <link rel="import" id="nationalmuseum" href="/sights/nationalmuseum.html">
+    <link rel="import" id="atameken" href="/sights/atameken.html">
+    <link rel="import" id="oceanarium" href="/sights/oceanarium.html">
+    <link rel="import" id="arch" href="/sights/arch.html">
+    <link rel="import" id="burabaypark" href="/sights/burabaypark.html">
+    <link rel="import" id="bolektau" href="/sights/bolektau.html">
+    <link rel="import" id="abylaykhan" href="/sights/abylaykhan.html">
+    <link rel="import" id="okzhetpes" href="/sights/okzhetpes.html">
+    <link rel="import" id="footer" href="/footer.html">
+    <script src="js/jquery-3.2.1.min.js"></script>
+  </head>
+  <script>
+    function showSight(id) {
+      $('#sights-content').html('');
+      var link = document.querySelector('link[id="' + id + '"]');
+      var content = link.import.querySelector('div');
+      $('#sights-content').append(content.cloneNode(true));
+      $('.sights-menu-link').removeClass('-active');
+      $('#link-' + id).addClass('-active');
+    }
+  </script>
+  <script>
+    $(document).ready( function() {
+      $('footer').append(document.getElementById('footer').import.querySelector('div'));
+    });
+  </script>
+  <body data-position="relative" onload="showSight('independence')">
+    <div class="flex-container">
+      <div data-padding="16x lg:0x 32y">
+        <div class="flex-row" data-cell-spacing="16px">
+          <div class="flex-full flex-sm-half flex-md-4 flex-lg-3">
+            <a href="/" title="
+Go to Homepage
+                               ">
+              <img src="img/logo.svg" width="128">
+            </a>
+            <br>
+            <br>
+            <div class="flex-col sights-menu" data-cell-spacing="4px">
+              <div class="sights-menu-link" id="link-independence" onclick="showSight('independence')">
+Independence Square
+              </div>
+              <div class="sights-menu-link" id="link-qazaqeli" onclick="showSight('qazaqeli')">
+Kazakh Eli monument
+              </div>
+              <div class="sights-menu-link" id="link-khazretsultan" onclick="showSight('khazretsultan')">
+Khazret Sultan Mosque
+              </div>
+              <div class="sights-menu-link" id="link-pyramid" onclick="showSight('pyramid')">
+Palace of Peace and Reconciliation
+              </div>
+              <div class="sights-menu-link" id="link-bayterek" onclick="showSight('bayterek')">
+Astana-Bayterek monument
+              </div>
+              <div class="sights-menu-link" id="link-nurlyzhol" onclick="showSight('nurlyzhol')">
+Nurlyzhol Boulevard
+              </div>
+              <div class="sights-menu-link" id="link-kmg" onclick="showSight('kmg')">
+Round Square
+              </div>
+              <div class="sights-menu-link" id="link-opera" onclick="showSight('opera')">
+Astana Opera theatre of Opera and Ballet
+              </div>
+              <div class="sights-menu-link" id="link-shatyr" onclick="showSight('shatyr')">
+Khan Shatyr Shopping & Entertainment Center
+              </div>
+              <div class="sights-menu-link" id="link-mainsquare" onclick="showSight('mainsquare')">
+Main Square
+              </div>
+              <div class="sights-menu-link" id="link-embankment" onclick="showSight('embankment')">
+Embankment of Ishym River
+              </div>
+              <div class="sights-menu-link" id="link-ishym" onclick="showSight('ishym')">
+Boat trip on Ishym River
+              </div>
+              <div class="sights-menu-link" id="link-presidentmuseum" onclick="showSight('presidentmuseum')">
+Museum of the President's Cultural Centre
+              </div>
+              <div class="sights-menu-link" id="link-nationalmuseum" onclick="showSight('nationalmuseum')">
+National Museum of the Republic of Kazakhstan
+              </div>
+              <div class="sights-menu-link" id="link-atameken" onclick="showSight('atameken')">
+Map of Kazakhstan - Atameken
+              </div>
+              <div class="sights-menu-link" id="link-oceanarium" onclick="showSight('oceanarium')">
+Oceanarium
+              </div>
+              <div class="sights-menu-link" id="link-arch" onclick="showSight('arch')">
+Triumphal arch «Mangilik El»
+              </div>
+              <!--div class="sights-menu-link" id="link-burabaypark" onclick="showSight('burabaypark')">
+Burabay National Park
+              </div>
+              <div class="sights-menu-link" id="link-bolektau" onclick="showSight('bolektau')">
+Bolektau Mountain viewpoint
+              </div>
+              <div class="sights-menu-link" id="link-abylaykhan" onclick="showSight('abylaykhan')">
+Valley and meadow of Abylay khan
+              </div>
+              <div class="sights-menu-link" id="link-okzhetpes" onclick="showSight('okzhetpes')">
+Ush-Kyz, Ok-Zhetpes and Zhumbaktas Rocks
+              </div-->
+            </div>
+          </div>
+          <div class="flex-full flex-sm-half flex-md-8 flex-lg-9" id="sights-content">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+</html>
