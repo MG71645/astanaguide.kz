@@ -79,6 +79,10 @@ select {
   padding-right: 32px;
 }
 
+.select {
+  background: url(../img/select.svg) right center no-repeat;
+}
+
 [data-appearance^="select"] {
   display: -webkit-flex;
   display: -moz-flex;
