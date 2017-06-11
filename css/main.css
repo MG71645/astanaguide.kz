@@ -325,6 +325,16 @@ section {
   background-size: cover;
 }
 
+#guide09 .guide-photo {
+  background: url(../img/guides/09.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#guide10 .guide-photo {
+  background: url(../img/guides/10.jpg) center center no-repeat;
+  background-size: cover;
+}
+
 .guide-name {
   line-height: 1;
   font-size: 24px;
