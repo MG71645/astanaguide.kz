@@ -452,35 +452,35 @@ input[type="file"] {
 
 
 
-[data-cell-width~="1"] > * {
+[data-cell-width^="1"] > * {
   width: 8.33333333%;
 }
 
-[data-cell-width~="2"] > * {
+[data-cell-width^="2"] > * {
   width: 16.66666667%;
 }
 
-[data-cell-width~="20%"] > * {
+[data-cell-width^="20%"] > * {
   width: 20%;
 }
 
-[data-cell-width~="3"] > * {
+[data-cell-width^="3"] > * {
   width: 25%;
 }
 
-[data-cell-width~="4"] > * {
+[data-cell-width^="4"] > * {
   width: 33.33333333%;
 }
 
-[data-cell-width~="5"] > * {
+[data-cell-width^="5"] > * {
   width: 41.66666667%;
 }
 
-[data-cell-width~="6"] > *, [data-cell-width~="half"] > * {
+[data-cell-width^="6"] > *, [data-cell-width^="half"] > * {
   width: 50%;
 }
 
-[data-cell-width~="12"] > *, [data-cell-width~="full"] > * {
+[data-cell-width^="12"] > *, [data-cell-width^="full"] > * {
   width: 100%;
 }
 

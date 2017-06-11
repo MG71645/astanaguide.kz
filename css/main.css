@@ -69,17 +69,48 @@ section {
   margin-top: -128px;
 }
 
+.tours-slider {
+  flex-wrap: nowrap;
+  transform-style: preserve-3d;
+  transform: perspective(900px);
+}
+
+[class*="tours-slider-button"] {
+  position: absolute;
+  top: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  background: black;
+  color: white;
+}
+
+.tours-slider-button-previous {
+  left: 0;
+}
+
+.tours-slider-button-next {
+  right: 0;
+}
+
 .tour {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.tour a {
   cursor: pointer;
   flex-shrink: 0;
   position: relative;
-  width: 239px;
+  max-width: 239px;
   margin: 0.5px;
   font-size: 11px;
   line-height : 16px;
   background-color: white;
   color : #757575;
-} .tour:before {
+} .tour a:before {
   content: "";
   position: absolute;
   top: 0;
@@ -89,6 +120,11 @@ section {
   z-index: -1;
   background: black;
   box-shadow: 0 8px 32px rgba(0,0,0, 0.10);
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .tour-photo {

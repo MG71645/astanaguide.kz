@@ -165,9 +165,13 @@
       </div>
     </section>
     <section id="tours" data-padding="64y xs:32y">
-      <div class="flex-container">
-        <div class="flex-row tours-slider">
-          <a class="tour flex-col" id="walkingTour" onclick="openModal('walking')">
+      <div class="flex-container" data-position="relative">
+        <button class="tours-slider-button-previous" disabled data-display="lg: none">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </button>
+        <div class="flex-row tours-slider" data-cell-width="full">
+          <div class="tour flex-col flex-items-center">
+            <a class="flex-col flex-grow" id="walkingTour" onclick="openModal('walking')">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -217,7 +221,9 @@ Duration: 2-3 hours
               </div>
             </div>
           </a>
-          <a class="tour flex-col" id="halfdayTour" onclick="openModal('halfday')">
+          </div>
+          <div class="tour flex-col flex-items-center">
+            <a class="flex-col flex-grow" id="halfdayTour" onclick="openModal('halfday')">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -264,7 +270,9 @@ Duration: 2-3 hours
               </div>
             </div>
           </a>
-          <a class="tour flex-col" id="fulldayTour" onclick="openModal('fullday')">
+          </div>
+          <div class="tour flex-col flex-items-center">
+            <a class="flex-col flex-grow" id="fulldayTour" onclick="openModal('fullday')">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -318,7 +326,9 @@ Duration: 4-5 hours
               </div>
             </div>
           </a>
-          <a class="tour flex-col" id="riverTour" onclick="openModal('river')">
+          </div>
+          <div class="tour flex-col flex-items-center">
+            <a class="flex-col flex-grow" id="riverTour" onclick="openModal('river')">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -368,7 +378,9 @@ Duration: 4-5 hours
               </div>
             </div>
           </a>
-          <a class="tour flex-col" id="burabayTour" onclick="openModal('burabay')">
+          </div>
+          <div class="tour flex-col flex-items-center">
+            <a class="flex-col flex-grow" id="burabayTour" onclick="openModal('burabay')">
             <div class="tour-photo" data-shape="16x9"></div>
             <div class="tour-content flex-col flex-grow">
               <div class="flex-col flex-grow" data-cell-spacing="8px">
@@ -417,7 +429,11 @@ Duration: 9-10 hours
               </div>
             </div>
           </a>
+          </div>
         </div>
+        <button class="tours-slider-button-next" data-display="lg: none">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </button>
       </div>
     </section>
     <section id="places" data-padding="64y xs:32y">
@@ -600,7 +616,7 @@ Online or cash payment
       </div>
     </section>
     <section id="guides" data-padding="64y xs:32y">
-      <div class="flex-container" data-padding="16x lg:0x">
+      <div class="flex-container">
         <div class="flex-col" data-cell-spacing="32px">
           <div class="guides-header">
             <div data-cell-spacing="8px" data-text-align="center">
@@ -610,7 +626,8 @@ Guides
               </h3>
             </div>
           </div>
-          <div class="guides-content">
+          <div>
+            <div class="guides-content" data-padding="16x lg:0x">
             <button class="guides-slider-button-previous" disabled>
               <i class="material-icons">keyboard_arrow_left</i>
             </button>
@@ -806,6 +823,7 @@ Tair
             <button class="guides-slider-button-next">
               <i class="material-icons">keyboard_arrow_right</i>
             </button>
+          </div>
           </div>
         </div>
       </div>

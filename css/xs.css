@@ -1,7 +1,6 @@
 @media screen and (max-width: 600px) {
   
   #main {
-    height: 100vh;
     min-height: 0;
     background: url(../img/mobile.jpg) center top no-repeat;
     background-size: cover;
@@ -19,26 +18,24 @@
     font-size: 36px;
   }
   
-  #tours {
-    margin: 0;
-    padding-top: 0 !important;
-  }
-  
-  .tours-slider {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
-  
   .places-hashtag {
     font-size: 18px;
   }
 
-  .-hideToLeft {
-    margin-right: -50%;
+  .tour.-hideToLeft {
+    margin-right: -100%;
   }
 
-  .-hideToRight {
-    margin-left: -50%;
+  .tour.-hideToRight {
+    margin-left: -100%;
+  }
+
+  .guide.-hideToLeft {
+    margin-right: -100%;
+  }
+
+  .guide.-hideToRight {
+    margin-left: -100%;
   }
   
   .booking-form input[name="name"] {

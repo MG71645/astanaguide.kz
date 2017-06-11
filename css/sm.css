@@ -1,11 +1,19 @@
 @media screen and (min-width: 600px) {
 
-  .-hideToLeft {
+  .tour.-hideToLeft {
     margin-right: -33.33%;
   }
 
-  .-hideToRight {
+  .tour.-hideToRight {
     margin-left: -33.33%;
+  }
+
+  .guide.-hideToLeft {
+    margin-right: -50%;
+  }
+
+  .guide.-hideToRight {
+    margin-left: -50%;
   }
   
 }

@@ -9,26 +9,43 @@ var prices = [
 $(document).ready(function() {
   setPrices();
   adapt();
-  
-  var length = $('.guide').length;
-  
+
+  var toursLength = $('.tour').length;
+  var guidesLength = $('.guide').length;
+
   $(window).resize(function() {
     adapt();
   });
 
+  $('.tours-slider-button-previous').click(function() {
+    $('.tour:nth-of-type(' + (--toursPosition) + ')').removeClass('-hideToLeft');
+    $('.tour:nth-of-type(' + (toursPosition+toursShown) + ')').addClass('-hideToRight');
+    if (toursPosition == 1) {
+      $('.tours-slider-button-previous').prop('disabled', true);
+    }
+    $('.tours-slider-button-next').prop('disabled', false);
+  });
+  $('.tours-slider-button-next').click(function() {
+    $('.tour:nth-of-type(' + toursPosition + ')').addClass('-hideToLeft');
+    $('.tour:nth-of-type(' + (toursPosition+toursShown) + ')').removeClass('-hideToRight');
+    if ((toursPosition++) + toursShown == toursLength) {
+      $('.tours-slider-button-next').prop('disabled', true);
+    }
+    $('.tours-slider-button-previous').prop('disabled', false);
+  });
+
   $('.guides-slider-button-previous').click(function() {
-    $('.guide:nth-of-type(' + (--position) + ')').removeClass('-hideToLeft');
-    $('.guide:nth-of-type(' + (position+guidesShown) + ')').addClass('-hideToRight');
-    if (position == 1) {
+    $('.guide:nth-of-type(' + (--guidesPosition) + ')').removeClass('-hideToLeft');
+    $('.guide:nth-of-type(' + (guidesPosition+guidesShown) + ')').addClass('-hideToRight');
+    if (guidesPosition == 1) {
       $('.guides-slider-button-previous').prop('disabled', true);
     }
     $('.guides-slider-button-next').prop('disabled', false);
   });
-
   $('.guides-slider-button-next').click(function() {
-    $('.guide:nth-of-type(' + position + ')').addClass('-hideToLeft');
-    $('.guide:nth-of-type(' + (position+guidesShown) + ')').removeClass('-hideToRight');
-    if ((position++) + guidesShown == length) {
+    $('.guide:nth-of-type(' + guidesPosition + ')').addClass('-hideToLeft');
+    $('.guide:nth-of-type(' + (guidesPosition+guidesShown) + ')').removeClass('-hideToRight');
+    if ((guidesPosition++) + guidesShown == guidesLength) {
       $('.guides-slider-button-next').prop('disabled', true);
     }
     $('.guides-slider-button-previous').prop('disabled', false);
@@ -38,18 +55,29 @@ $(document).ready(function() {
 function adapt() {
   var viewportWidth = window.innerWidth;
   console.log(viewportWidth);
-  if (viewportWidth <= 600) {
+  if (viewportWidth < 600) {
+    toursShown = 1;
+    guidesShown = 1;
+  } else if (viewportWidth < 900) {
+    toursShown = 3;
     guidesShown = 2;
-  } else if (viewportWidth <= 900) {
+  } else if (viewportWidth < 1232) {
+    toursShown = 4;
     guidesShown = 3;
   } else {
+    toursShown = 5;
     guidesShown = 4;
   }
-  position = 1;
+  toursPosition = 1;
+  $('.tour').removeClass('-hideToLeft').removeClass('-hideToRight');
+  $('.tours-slider-button-previous').prop('disabled', true);
+  $('.tours-slider-button-next').prop('disabled', false);
+  $('.tour:nth-of-type(n+' + (toursPosition+toursShown) + ')').addClass('-hideToRight');
+  guidesPosition = 1;
   $('.guide').removeClass('-hideToLeft').removeClass('-hideToRight');
   $('.guides-slider-button-previous').prop('disabled', true);
   $('.guides-slider-button-next').prop('disabled', false);
-  $('.guide:nth-of-type(n+' + (position+guidesShown) + ')').addClass('-hideToRight');
+  $('.guide:nth-of-type(n+' + (guidesPosition+guidesShown) + ')').addClass('-hideToRight');
 }
 
 function getPrices() {
