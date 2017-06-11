@@ -1,0 +1,11 @@
+@media screen and (min-width: 600px) {
+
+  .-hideToLeft {
+    margin-right: -33.33%;
+  }
+
+  .-hideToRight {
+    margin-left: -33.33%;
+  }
+  
+}

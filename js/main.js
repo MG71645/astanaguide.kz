@@ -1,18 +1,24 @@
 var prices = [
-  [110, 120], [110, 120], [185, 200], [185, 200], [395, 405]
+  [110, 120], // walking tour
+  [110, 120], // half-day tour
+  [185, 200], // full-day tour
+  [185, 200], // river boat tour
+  [395, 405]  // burabay tour
 ]
 
 $(document).ready(function() {
   setPrices();
+  adapt();
   
-  var position = 1;
-  var width = 4;
   var length = $('.guide').length;
-  $('.guide:nth-of-type(n+' + (position+width) + ')').addClass('-hideToRight');
+  
+  $(window).resize(function() {
+    adapt();
+  });
 
   $('.guides-slider-button-previous').click(function() {
     $('.guide:nth-of-type(' + (--position) + ')').removeClass('-hideToLeft');
-    $('.guide:nth-of-type(' + (position + width) + ')').addClass('-hideToRight');
+    $('.guide:nth-of-type(' + (position+guidesShown) + ')').addClass('-hideToRight');
     if (position == 1) {
       $('.guides-slider-button-previous').prop('disabled', true);
     }
@@ -21,13 +27,30 @@ $(document).ready(function() {
 
   $('.guides-slider-button-next').click(function() {
     $('.guide:nth-of-type(' + position + ')').addClass('-hideToLeft');
-    $('.guide:nth-of-type(' + (position+width) + ')').removeClass('-hideToRight');
-    if ((position++) + width == length) {
+    $('.guide:nth-of-type(' + (position+guidesShown) + ')').removeClass('-hideToRight');
+    if ((position++) + guidesShown == length) {
       $('.guides-slider-button-next').prop('disabled', true);
     }
     $('.guides-slider-button-previous').prop('disabled', false);
   });
 });
+
+function adapt() {
+  var viewportWidth = window.innerWidth;
+  console.log(viewportWidth);
+  if (viewportWidth <= 600) {
+    guidesShown = 2;
+  } else if (viewportWidth <= 900) {
+    guidesShown = 3;
+  } else {
+    guidesShown = 4;
+  }
+  position = 1;
+  $('.guide').removeClass('-hideToLeft').removeClass('-hideToRight');
+  $('.guides-slider-button-previous').prop('disabled', true);
+  $('.guides-slider-button-next').prop('disabled', false);
+  $('.guide:nth-of-type(n+' + (position+guidesShown) + ')').addClass('-hideToRight');
+}
 
 function getPrices() {
   var tour = $('#bookingModal select[name="tour"]').val();

@@ -32,6 +32,14 @@
   .places-hashtag {
     font-size: 18px;
   }
+
+  .-hideToLeft {
+    margin-right: -50%;
+  }
+
+  .-hideToRight {
+    margin-left: -50%;
+  }
   
   .booking-form input[name="name"] {
     border-right: none;

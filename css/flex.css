@@ -709,56 +709,56 @@ input[type="file"] {
 [data-cell-spacing^="0"] {
   width: 100%;
   margin: 0 !important;
-} [data-cell-spacing*="0"] > * {
+} [data-cell-spacing^="0"] > * {
   padding: 0;
 }
 
 [data-cell-spacing^="2px"] {
   width: calc(100% + 4px);
   margin: -2px !important;
-} [data-cell-spacing*="2px"] > * {
+} [data-cell-spacing^="2px"] > * {
   padding: 2px;
 }
 
 [data-cell-spacing^="4px"] {
   width: calc(100% + 8px);
   margin: -4px !important;
-} [data-cell-spacing*="4px"] > * {
+} [data-cell-spacing^="4px"] > * {
   padding: 4px;
 }
 
 [data-cell-spacing^="8px"] {
   width: calc(100% + 16px);
   margin: -8px !important;
-} [data-cell-spacing*="8px"] > * {
+} [data-cell-spacing^="8px"] > * {
   padding: 8px;
 }
 
 [data-cell-spacing^="12px"] {
   width: calc(100% + 24px);
   margin: -12px !important;
-} [data-cell-spacing*="12px"] > * {
+} [data-cell-spacing^="12px"] > * {
   padding: 12px;
 }
 
 [data-cell-spacing^="16px"] {
   width: calc(100% + 32px);
   margin: -16px !important;
-} [data-cell-spacing*="16px"] > * {
+} [data-cell-spacing^="16px"] > * {
   padding: 16px;
 }
 
 [data-cell-spacing^="24px"] {
   width: calc(100% + 48px);
   margin: -24px !important;
-} [data-cell-spacing*="24px"] > * {
+} [data-cell-spacing^="24px"] > * {
   padding: 24px;
 }
 
 [data-cell-spacing^="32px"] {
   width: calc(100% + 64px);
   margin: -32px !important;
-} [data-cell-spacing*="32px"] > * {
+} [data-cell-spacing^="32px"] > * {
   padding: 32px;
 }
 
