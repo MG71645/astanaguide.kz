@@ -81,7 +81,8 @@ function adapt() {
 }
 
 function getPrices() {
-  var tour = $('#bookingModal select[name="tour"]').val();
+  var tour = $('#modal-body select[name="tour"]').val();
+  console.log(tour);
   switch(tour) {
     case 'walking':
       $('.seats-3').html(prices[0][0]);
