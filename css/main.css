@@ -18,8 +18,7 @@ section {
   min-height: calc(800px + 160px);
   background-image: url(../img/main.jpg);
   background-position: center top;
-  background-repeat: no-repeat;/*
-  background-size: cover;*/
+  background-repeat: no-repeat;
 }
 
 #main .flex-container {
@@ -70,6 +69,7 @@ section {
 }
 
 .tours-slider {
+  max-width: 100vw;
   flex-wrap: nowrap;
   transform-style: preserve-3d;
   transform: perspective(900px);
@@ -93,6 +93,7 @@ section {
 }
 
 .tour {
+  max-width: 100vw;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
