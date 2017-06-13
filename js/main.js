@@ -52,6 +52,10 @@ $(document).ready(function() {
   });
 });
 
+function toggleDropdown(className) {
+  $('.' + className).toggleClass('-focused');
+}
+
 function adapt() {
   var viewportWidth = window.innerWidth;
   console.log(viewportWidth);

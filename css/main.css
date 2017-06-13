@@ -435,8 +435,6 @@ section {
 .booking-form-messenger {
   flex-wrap: wrap;
   height: 40px;
-} .booking-form-messenger:hover {
-  height: 120px;
 }
 
 .booking-form-messenger label {
@@ -444,8 +442,6 @@ section {
   height: 40px;
   padding: 0 12px;
   background: white;
-} .booking-form-messenger:hover label {
-  display: flex !important;
 }
 
 input[name="messenger"] {

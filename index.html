@@ -32,13 +32,13 @@
     <link rel="stylesheet" href="css/flex.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/booking.css">
     <link rel="stylesheet" href="css/order.css">
     <link rel="stylesheet" href="css/xs.css">
     <link rel="stylesheet" href="css/sm.css">
     <link rel="stylesheet" href="css/md.css">
     <link rel="stylesheet" href="css/lg.css">
     <link rel="stylesheet" href="css/animation.css">
-    <link rel="stylesheet" href="css/booking.css">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
   </head>
@@ -845,7 +845,7 @@ Your name
                       <input type="radio" name="messenger" id="messenger-email" checked>
                       <input type="radio" name="messenger" id="messenger-whatsapp">
                       <input type="radio" name="messenger" id="messenger-telegram">
-                      <label for="messenger-email" data-width="5">
+                      <label for="messenger-email" data-width="5" onclick="toggleDropdown('booking-form-messenger')">
                         <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
                           <div class="flex-shrink ellipsis">Email</div>
                           <div>
@@ -853,7 +853,7 @@ Your name
                           </div>
                         </div>
                       </label>
-                      <label for="messenger-whatsapp" data-width="5">
+                      <label for="messenger-whatsapp" data-width="5" onclick="toggleDropdown('booking-form-messenger')">
                         <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
                           <div class="flex-shrink ellipsis">WhatsApp</div>
                           <div>
@@ -861,7 +861,7 @@ Your name
                           </div>
                         </div>
                       </label>
-                      <label for="messenger-telegram" data-width="5">
+                      <label for="messenger-telegram" data-width="5" onclick="toggleDropdown('booking-form-messenger')">
                         <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
                           <div class="flex-shrink ellipsis">Telegram</div>
                           <div>
@@ -995,7 +995,7 @@ Your name
                   <input type="radio" name="contact" id="contact-email" checked>
                   <input type="radio" name="contact" id="contact-whatsapp">
                   <input type="radio" name="contact" id="contact-telegram">
-                  <label for="contact-email" data-width="5">
+                  <label for="contact-email" data-width="5" onclick="toggleDropdown('booking-form-contact')">
                     <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
                       <div class="flex-shrink ellipsis">Email</div>
                       <div>
@@ -1003,7 +1003,7 @@ Your name
                       </div>
                     </div>
                   </label>
-                  <label for="contact-whatsapp" data-width="5">
+                  <label for="contact-whatsapp" data-width="5" onclick="toggleDropdown('booking-form-contact')">
                     <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
                       <div class="flex-shrink ellipsis">WhatsApp</div>
                       <div>
@@ -1011,7 +1011,7 @@ Your name
                       </div>
                     </div>
                   </label>
-                  <label for="contact-telegram" data-width="5">
+                  <label for="contact-telegram" data-width="5" onclick="toggleDropdown('booking-form-contact')">
                     <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
                       <div class="flex-shrink ellipsis">Telegram</div>
                       <div>

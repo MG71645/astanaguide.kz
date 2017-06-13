@@ -43,4 +43,16 @@
     border-bottom: 1px solid rgba(0,0,0, 0.10);
   }
   
+  .booking-form-contact.-focused {
+    height: 120px;
+  }.booking-form-contact.-focused label {
+    display: flex !important;
+  }
+  
+  .booking-form-messenger.-focused {
+    height: 120px;
+  }.booking-form-messenger.-focused label {
+    display: flex !important;
+  }
+  
 }

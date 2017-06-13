@@ -16,4 +16,16 @@
     margin-left: -50%;
   }
   
+  .booking-form-contact:hover {
+    height: 120px;
+  } .booking-form-contact:hover label {
+    display: flex !important;
+  }
+  
+  .booking-form-messenger:hover {
+    height: 120px;
+  } .booking-form-messenger:hover label {
+    display: flex !important;
+  }
+  
 }
