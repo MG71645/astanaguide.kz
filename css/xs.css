@@ -21,6 +21,11 @@
   .places-hashtag {
     font-size: 18px;
   }
+  
+  .tour a {
+    max-width: 280px;
+    font-size: 14px;
+  }
 
   .tour.-hideToLeft {
     margin-right: -100%;

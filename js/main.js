@@ -1,9 +1,9 @@
 var prices = [
-  [110, 120], // walking tour
-  [110, 120], // half-day tour
-  [185, 200], // full-day tour
-  [185, 200], // river boat tour
-  [395, 405]  // burabay tour
+  [100, 105], // walking tour
+  [100, 105], // half-day tour
+  [175, 180], // full-day tour
+  [175, 180], // river boat tour
+  [390, 400]  // burabay tour
 ]
 
 $(document).ready(function() {
