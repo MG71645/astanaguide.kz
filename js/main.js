@@ -58,7 +58,6 @@ function toggleDropdown(className) {
 
 function adapt() {
   var viewportWidth = window.innerWidth;
-  console.log(viewportWidth);
   if (viewportWidth < 600) {
     toursShown = 1;
     guidesShown = 1;
@@ -86,7 +85,6 @@ function adapt() {
 
 function getPrices() {
   var tour = $('#modal-body select[name="tour"]').val();
-  console.log(tour);
   switch(tour) {
     case 'walking':
       $('.seats-3').html(prices[0][0]);

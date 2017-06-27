@@ -47,6 +47,7 @@ section {
 }
 
 .main-content-cta {
+  cursor: pointer;
   margin-top: 32px;
   margin-bottom: 64px;
   padding: 12px 24px;
