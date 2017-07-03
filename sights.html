@@ -7,51 +7,24 @@
     <link rel="stylesheet" href="css/flex.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/order.css">
-    <link rel="stylesheet" href="css/300.css">
-    <link rel="stylesheet" href="css/1200.css">
     <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/booking.css">
     <link rel="stylesheet" href="css/sights.css">
-    <link rel="import" id="independence" href="/sights/independence.html">
-    <link rel="import" id="qazaqeli" href="/sights/qazaqeli.html">
-    <link rel="import" id="khazretsultan" href="/sights/khazretsultan.html">
-    <link rel="import" id="pyramid" href="/sights/pyramid.html">
-    <link rel="import" id="bayterek" href="/sights/bayterek.html">
-    <link rel="import" id="nurlyzhol" href="/sights/nurlyzhol.html">
-    <link rel="import" id="kmg" href="/sights/kmg.html">
-    <link rel="import" id="opera" href="/sights/opera.html">
-    <link rel="import" id="shatyr" href="/sights/shatyr.html">
-    <link rel="import" id="mainsquare" href="/sights/mainsquare.html">
-    <link rel="import" id="embankment" href="/sights/embankment.html">
-    <link rel="import" id="ishym" href="/sights/ishym.html">
-    <link rel="import" id="presidentmuseum" href="/sights/presidentmuseum.html">
-    <link rel="import" id="nationalmuseum" href="/sights/nationalmuseum.html">
-    <link rel="import" id="atameken" href="/sights/atameken.html">
-    <link rel="import" id="oceanarium" href="/sights/oceanarium.html">
-    <link rel="import" id="arch" href="/sights/arch.html">
-    <link rel="import" id="burabaypark" href="/sights/burabaypark.html">
-    <link rel="import" id="bolektau" href="/sights/bolektau.html">
-    <link rel="import" id="abylaykhan" href="/sights/abylaykhan.html">
-    <link rel="import" id="okzhetpes" href="/sights/okzhetpes.html">
-    <link rel="import" id="footer" href="/footer.html">
     <script src="js/jquery-3.2.1.min.js"></script>
   </head>
+  
+  
+  
   <script>
     function showSight(id) {
-      $('#sights-content').html('');
-      var link = document.querySelector('link[id="' + id + '"]');
-      var content = link.import.querySelector('div');
-      $('#sights-content').append(content.cloneNode(true));
+      document.getElementById('sights-content').innerHTML = document.getElementById(id).innerHTML;
       $('.sights-menu-link').removeClass('-active');
       $('#link-' + id).addClass('-active');
     }
   </script>
-  <script>
-    $(document).ready( function() {
-      $('footer').append(document.getElementById('footer').import.querySelector('div'));
-    });
-  </script>
+  
+  
+  
   <body data-position="relative" onload="showSight('independence')">
     <div class="flex-container">
       <div data-padding="16x lg:0x 32y">
@@ -136,6 +109,668 @@ Ush-Kyz, Ok-Zhetpes and Zhumbaktas Rocks
         </div>
       </div>
     </div>
-    <footer></footer>
+    <footer>
+      <div class="flex-container" data-padding="32y 16x lg:0x">
+        <div class="flex-row flex-items-center" data-align-content="justify">
+          <div>
+            <div data-cell-spacing="8px" data-display="col sm: row" data-align-items="sm: center">
+              <a href="mailto:info@astanaguide.kz" title="
+Write email
+                                                          ">
+                <div class="flex-row flex-items-center" data-cell-spacing="4px">
+                  <div>
+                    <img src="img/gmail.svg" width="32">
+                  </div>
+                  <div>info@astanaguide.kz</div>
+                </div>
+              </a>
+              <div>
+                <div class="flex-row flex-items-center" data-cell-spacing="4px">
+                  <div>
+                    <img src="img/whatsapp.svg" width="32">
+                  </div>
+                  <div>+7 778 948 4224</div>
+                </div>
+              </div>
+              <div>
+                <div class="flex-row flex-items-center" data-cell-spacing="4px">
+                  <div>
+                    <img src="img/telegram.svg" width="32">
+                  </div>
+                  <div>+7 778 948 4224</div>
+                </div>
+              </div>
+              <a href="https://www.instagram.com/astanaguide.kz/" target="_blank" title="
+Open in Instagram
+                                                                                         ">
+                <div class="flex-row flex-items-center" data-cell-spacing="4px">
+                  <div>
+                    <img src="img/instagram.svg" width="32">
+                  </div>
+                  <div>astanaguide.kz</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <a href="/" title="
+Go to Homepage
+                             ">
+            <img src="img/logo.svg" width="96">
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
+  
+  
+  
+  <div id="independence" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/independence/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Independence Square
+        </h4>
+        <p>
+    Amazing panoramic views of a left coast of Astana open from Independence Square.
+    All power and freedom of the country is felt on the square among majestic monuments and fountains.
+    Independence square is one of main tourist attractions in Astana.
+    All celebrations and official events take place at the Independence Square as in any main squares of the country
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/independence/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/independence/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/independence/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="qazaqeli" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/qazaqeli/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Kazakh Eli monument
+        </h4>
+        <p>
+    The Kazakh Eli Monument is one of Astana’s landmarks. The monument is located in the center of the city,
+    in the Independence Square between the President’s and the Millenium Parks.
+    The monument embodies the country’s independence and is considered a part of Kazakhstan’s legacy.
+    Kazakh Eli is a part of Kazakhstan’s history and a symbol of the country’s future. The monument emphasizes social,
+    economic, political and spiritual aspects of the country.
+    There was no monumental object like this before since Kazakhstan became sovereign.
+    It is a unique architectural structure and has no analogs in the world.
+    The total area of the monument is 5.2 hectares, and it holds a special place in the history of the people
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/qazaqeli/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/qazaqeli/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/qazaqeli/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="khazretsultan" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/khazretsultan/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Khazret Sultan Mosque
+        </h4>
+        <p>
+    One of the most modern attractions of Astana, the young Kazakhstan capital, is the Hazrat Sultan Cathedral Mosque.
+    The construction of this largest mosque in Central Asia took as long as 3 years and was inaugurated in July 2012.
+    The colossal building resembles an oriental palace, whose construction involved over 1,500 builders and masters,
+    who with joint efforts created the most beautiful landmark of Astana
+        </p>
+        <p>
+    The Hazrat Sultan, as one of the largest mosque in Asia, occupies the area of 11 ha, able to house up to 10,000 people.
+    The mosque premises area amounts to 17.8 ha and includes tabernacles, a hall for wedding ceremonies,
+    rooms for Koran reading and having lessons for seminarians, as well as a cloakroom and аn ablution room.
+    Thus, this is a fully functional mosque corresponding to all modern requirements
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/khazretsultan/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/khazretsultan/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/khazretsultan/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="pyramid" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/pyramid/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Palace of Peace and Reconciliation
+        </h4>
+        <p>
+    Palace of Peace and Reconciliation or Pyramid is one of the main attractions in the capital of Kazakhstan, Astana.
+    This amazing building is one of the unique buildings in the world that built in recent years.
+    Iconic pyramid from famed British architect Norman Foster designed to represent all of the world's religious faiths.
+    Built between 2004 and 2006 in Kazakhstan’s capital city of Astana, the Palace of Peace and Reconciliation
+    (also known as the Palace of Peace and Accord) is one of the world’s most impressive pyramid designs - second, maybe,
+    to the Great Pyramids of Egypt, but that’s an argument to be had between fanatics of modern architecture and ancient construction.
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/pyramid/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/pyramid/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/pyramid/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="bayterek" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/bayterek/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Astana-Bayterek monument
+        </h4>
+        <p>
+    If you already can not imagine Paris without the Eiffel Tower, the Baiterek Tower ("Poplar" - in Kazakh language)
+    it firmly became a symbol of modern Astana. The monument symbolizes the Kazakh’s people idea about the universe.
+    The height of the tower - 105 meters.
+    At the height of 97 meters there is an observatory - a platform that allows you to see the city from a bird's flight.
+    The number 97 has not been selected at random. It symbolizes the year when the capital Astana ads
+        </p>
+        <p>
+    White latticed tower crowned by a large glass orb.
+    This embodies a Kazakh legend in which the mythical bird Samruk lays a golden egg containing the secrets of human desires
+    and happiness in a tall poplar tree, beyond human reach.
+    A lift glides visitors up inside the egg, where you can ponder the symbolism,
+    enjoy expansive views and place your hand in a print of President Nazarbaev’s palm while gazing eastward towards his palace
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/bayterek/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/bayterek/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/bayterek/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="nurlyzhol" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/nurlyzhol/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Nurlyzhol Boulevard
+        </h4>
+        <p>
+    Water-Green Boulevard (Boulevard Nurzhol) is located in the new administrative and business centre of Astana,
+    on the left bank of the River Ishim.
+    This construction has a pedestrian zone, extending from the president's residence Ak-Orda to the shopping centre Khan Shatyr.
+    There are several architectural sites along the boulevard, which were built by famous Russian and foreign architects.
+    Parking facility is on the lower level, the average level is occupied by commercial pavilions, business offices.
+    The pedestrian area, decorated with flower beds, fountains, beautiful floral walkways with benches occupies the upper zone
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/nurlyzhol/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/nurlyzhol/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/nurlyzhol/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="kmg" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/kmg/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Round Square
+        </h4>
+        <p>
+    The round square is a unique architectural solution complementing the image of Astana as the city of the future.
+    The construction of the “Round Square” in Astana is the first experiment of placing such a massive object on the compound ground.
+    It was the first time in Kazakhstan when a high strength concrete was used.
+    The capital “Round square” is constructed in two levels: down side is built for pedestrians, the top side is for auto transport.
+    Automobile bridge which crosses the square is the only one in the country as it has been built from a monolithic concrete.
+    Canadian experts were hired when designing and further inspection of the bridge. The body of the bridge is 2.5 m.
+    Inside the body there are strained wire cables and empty spaces for engineering communications
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/kmg/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/kmg/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/kmg/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="opera" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/opera/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Astana Opera theatre of Opera and Ballet
+        </h4>
+        <p>
+    The most popular sightseeing is the theater of Astana "Astana Opera" - the pride of Kazakhstan
+        </p>
+        <p>
+    Located on the left bank of the Ishim River, the theater "Astana Opera" is striking in its grandeur.
+    According to the architectural perfection is not inferior to the famous Opera House of the world, such as "La Scala" in Milan,
+    the Royal Theatre in Madrid, the Bolshoi Theatre in Moscow, the Metropolitan Opera in New York and others
+        </p>
+        <p>
+    At the main entrance portico decorated with the song "Kobyz players" and "Girl with zhetygen" sculptors M. Mansurov and T.Yermekova.
+    Quadriga mounted on the building of the theater, it is a way of managing the chariot Saka queen Tomiris
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/opera/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/opera/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/opera/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="shatyr" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/shatyr/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Khan Shatyr Shopping & Entertainment Center
+        </h4>
+        <p>
+    The architect of the shopping and entertainment center "Khan Shatyr" is the famous Norman Foster,
+    who designed many of the modern facilities not only in Astana, but also in London and many cities in the world
+        </p>
+        <p>
+    The unique shell of the tent allows you to maintain a comfortable microclimate inside the building,
+    even if outside the raging storms or cold rage, that usual for Astana residents.
+    Consistently good weather and plenty of sunshine - a business card of "Khan Shatyr"
+        </p>
+        <p>
+    Inside a lot of greens. All of these can be admired from the top terrace equipped with a viewing platform.
+    Under the exhibition and entertainment events assigned spacious flexible platform in the center of the building
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/shatyr/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/shatyr/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/shatyr/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mainsquare" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/mainsquare/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Main Square
+        </h4>
+        <p>
+    Astana today is an experimental site of world architectural thought.
+    Essentially, in the center of the boundless Kazakh steppe grows a unique city with unique buildings and squares.
+    One of the attractive squares is main square, which studded with governmental buildings in the left bank of the city
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/mainsquare/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/mainsquare/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/mainsquare/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="embankment" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/embankment/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Embankment of Ishym River
+        </h4>
+        <p>
+    The unhurried flow of the river Ishim makes walks along the embankment one of the pleasant times for the residents and guests of Astana.
+    Ishim is the personification of the unity of the past and the future, the old and the new, the right and left banks of the Capital
+        </p>
+        <p>
+    The Ishim’s course through Astana is traditional place of rest.
+    The river is lined with embankments, which are a lovely place to walk.
+    They are a wonderful place to people watch -
+    older couples and effortlessly elegant Kazakh women with their husbands and babies come here to enjoy the summer sunshine
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/embankment/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/embankment/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/embankment/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="ishym" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/ishym/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Boat trip on Ishym River
+        </h4>
+        <p>
+    As a couple or with friends discover Astana as you've never seen it.
+    Gliding under bridge with a view of the finest monuments, enjoy an hour's relaxation in the heart of bustling Astana
+        </p>
+        <p>
+    The capital’s excellent waterfront views open from the tour boat. The tour route passes the most picturesque places of the city
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/ishym/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/ishym/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/ishym/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="presidentmuseum" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/presidentmuseum/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Museum of the President's Cultural Centre
+        </h4>
+        <p>
+    The yurt-shaped Presidential Cultural Centre houses an excellent museum whose highlight is the 2nd floor,
+    with outstanding collections of Kazakh jewellery and ‘gold and gold-makings’.
+    These include gold jewellery and replicas from the Scythian burial mounds at Berel and the Issyk burial mound
+    (where the Golden Man was found), replicas of the Golden Man and the ‘second Golden Man’ from western Kazakhstan,
+    a bejewelled replica of a horse from the Berel tomb, and real 4th-century-BC horse innards pickled in formaldehyde
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/presidentmuseum/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/presidentmuseum/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/presidentmuseum/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="nationalmuseum" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/nationalmuseum/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    National Museum of the Republic of Kazakhstan
+        </h4>
+        <p>
+    The National Museum of the Republic of Kazakhstan is the youngest and the largest in Central Asia
+        </p>
+        <p>
+    The museum opened on 2 July 2014, and visitors are welcomed into the grandiose entry hall by a giant golden eagle
+    whose wings flap serenely as an interactive screen describes Kazakhstan in all its glory.
+    Audio guides are available in English for 1000T, and a small cafe serves coffee and refreshments
+        </p>
+        <p>
+    This huge blue-glass-and-white-marble museum covers the history and culture of Kazakhstan from ancient to modern times.
+    Themed halls comprise interactive displays and artifact exhibits,
+    ranging from a full-sized yurt in the Hall of Ethnography to a chronicle of the capital's modern history in the Hall of Astana.
+    Don't miss the Golden Hall, which houses several thousand Bronze Age ornaments from the famed 'Golden Man'
+    (now a national symbol of Kazakhstan) – a 3rd- or 4th-century warrior whose gold-clad remains were uncovered in 1969
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/nationalmuseum/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/nationalmuseum/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/nationalmuseum/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="atameken" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/atameken/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Map of Kazakhstan - Atameken
+        </h4>
+        <p>
+    It seems impossible to travel around any country in 1 hour. Kazakhstan, which is the 9th largest in the world, seems even more so.
+    But there is one possibility to do it – you can turn into Gulliver for a while and see the entire country right before your eyes.
+    Just visit the ethno-memorial complex the “Map of Kazakhstan – Atameken”, designed by renowned architects and designers
+        </p>
+        <p>
+    The park was opened on Sept. 8, 2001 by the initiative of President Nazarbayev.
+    Such a fun way of presenting histories of cities,countries and peoples is popular in many countries:
+    Austria, Belgium, Britain, Germany, Switzerland and others. Around the world there are 17 of similar complexes
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/atameken/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/atameken/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/atameken/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="oceanarium" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/oceanarium/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Oceanarium
+        </h4>
+        <p>
+    The Oceanarium of the Center is a unique building located at a distance of more than 3,000 km from the ocean.
+    It is the home to about 2,000 animals, representing over 100 species of marine inhabitants from different parts of the Earth.
+    This was achieved thanks to the unique life-support system that includes a lot of pipes, pumps and filters.
+    The total volume of water in the system is 3 million liters
+        </p>
+        <p>
+    The main part of the Oceanarium is the big aquarium, at the bottom of which there is the 70-m glass tunnel.
+    There you’ll have the opportunity to walk on the seabed only a few centimeters away from sharks.
+    Twice a day experienced divers take part in the show “Feeding the Sharks”.
+    In addition to the marine predators the Oceanarium shows piranhas, seahorses, sea anemones, porcupine fish others
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/oceanarium/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/oceanarium/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/oceanarium/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="arch" style="display: none">
+    <div class="flex-col" data-cell-spacing="16px">
+      <div>
+        <div class="sight-photo" data-shape="2x1" style="background: url(/img/sights/arch/01.jpg) center / cover no-repeat"></div>
+      </div>
+      <div>
+        <h4>
+    Triumphal arch «Mangilik El»
+        </h4>
+        <p>
+    Triumphal arch was officially presented by Nursultan Nazarbayev on the 20th anniversary of Kazakhstan's Independence.
+    The arch can be seen both from the city itself and from its environs - this is the idea of the authors.
+    The height of Mangilik El is 20 m. Each meter represents the year of Kazakhstan's independent life.
+    There is an observation deck, from which you can see the whole city as in the palm of your hand
+        </p>
+        <p>
+    On the arch there is an inscription "Mangilik El", which came to the modern country, passing centuries - "Eternal people".
+    The most interesting sight in the corners is decorated with Kazakh ornaments. The arch is faced with granite and beige marble.
+    In its niches are four figures: a mother woman, as a symbol of the home;
+    The medieval hero demonstrating the heroic past of Kazakhstan; Aksakal-wise man, symbolizing wisdom, and a modern soldier.
+    Under each statue there is a solar sign of eternity, which has ancient roots.
+    The side part of the arch has a depression, where other figures-symbols are placed.
+    The arch can be reached by an underground passage - it is located at the intersection of two streets
+        </p>
+      </div>
+      <div>
+        <div class="flex-row" data-cell-width="4" data-cell-spacing="8px">
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/arch/02.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/arch/03.jpg) center / cover no-repeat"></div>
+          </div>
+          <div>
+            <div class="sight-gallery-photo" data-shape="3x2" style="background: url(/img/sights/arch/04.jpg) center / cover no-repeat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-46778520-4', 'auto');
+    ga('send', 'pageview');
+  </script>
 </html>

@@ -21,6 +21,11 @@
   .places-hashtag {
     font-size: 18px;
   }
+  
+  .tour a {
+    max-width: 280px;
+    font-size: 14px;
+  }
 
   .tour.-hideToLeft {
     margin-right: -100%;
@@ -41,6 +46,18 @@
   .booking-form input[name="name"] {
     border-right: none;
     border-bottom: 1px solid rgba(0,0,0, 0.10);
+  }
+  
+  .booking-form-contact.-focused {
+    height: 120px;
+  }.booking-form-contact.-focused label {
+    display: flex !important;
+  }
+  
+  .booking-form-messenger.-focused {
+    height: 120px;
+  }.booking-form-messenger.-focused label {
+    display: flex !important;
   }
   
 }

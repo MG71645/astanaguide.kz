@@ -32,124 +32,28 @@
     <link rel="stylesheet" href="css/flex.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/booking.css">
     <link rel="stylesheet" href="css/order.css">
     <link rel="stylesheet" href="css/xs.css">
     <link rel="stylesheet" href="css/sm.css">
     <link rel="stylesheet" href="css/md.css">
     <link rel="stylesheet" href="css/lg.css">
     <link rel="stylesheet" href="css/animation.css">
-    <link rel="stylesheet" href="css/booking.css">
-    <link rel="import" id="walking" href="/tours/walking.html">
-    <link rel="import" id="halfday" href="/tours/halfday.html">
-    <link rel="import" id="fullday" href="/tours/fullday.html">
-    <link rel="import" id="river" href="/tours/river.html">
-    <link rel="import" id="burabay" href="/tours/burabay.html">
-    <link rel="import" id="booking" href="/booking.html">
-    <link rel="import" id="success" href="/success.html">
-    <link rel="import" id="footer" href="/footer.html">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
   </head>
-  <script>
-    function sendForm(url) {
-      if ( $('#booking-form input[name="email"]').val() || $('#booking-form input[name="whatsapp"]').val() || $('#booking-form input[name="telegram"]').val() ) {
-        $('#booking-form-button').prop('disabled', true);
-        $('#booking-form-button').html('Booking...');
-        jQuery.ajax({
-          url: url,
-          type: "POST",
-          dataType: "html",
-          data: jQuery("#booking-form").serialize(),
-          success: function(response) {
-            setTimeout( function() {
-              openModal('success');
-            }, 1000 );
-          },
-          error: function(response) {
-            $('#popup_main_cta').html('Try again!');
-            setTimeout( function() {
-              $('#booking-form-button').prop('disabled', false);
-              $('#booking-form-button').prop('value', 'Book now');
-            }, 1000 );
-          }
-        });
-      } else {
-        alert('Please give us your email, whatsapp or telegram');
-      }
-    }
-  </script>
-  <script>
-    function sendForm2(url) {
-      if ( $('#bookingModal input[name="email"]').val() || $('#bookingModal input[name="whatsapp"]').val() || $('#bookingModal input[name="telegram"]').val() ) {
-        $('#bookingModal-button').prop('disabled', true);
-        $('#bookingModal-button').html('Booking...');
-        jQuery.ajax({
-          url: url,
-          type: "POST",
-          dataType: "html",
-          data: jQuery("#bookingModal-form").serialize(),
-          success: function(response) {
-            setTimeout( function() {
-              openModal('success');
-            }, 1000 );
-          },
-          error: function(response) {
-            $('#bookingModal-button').html('Try again!');
-            setTimeout( function() {
-              $('#bookingModal-button').prop('disabled', false);
-              $('#bookingModal-button').prop('value', 'Book now');
-            }, 1000 );
-          }
-        });
-      } else {
-        alert('Please give us your email, whatsapp or telegram');
-      }
-    }
-  </script>
-  <script>
-    function openModal(id) {
-      $('#modal-body').html('');
-      var link = document.querySelector('link[id="' + id + '"]');
-      var content = link.import.querySelector('div');
-      $('#modal-body').append(content.cloneNode(true));
-      setPrices();
-      $('html').css('overflow', 'hidden');
-      $('#modal').css('overflow', 'auto');
-      $('#modal').removeClass('hidden');
-      setTimeout( function() {
-        $('#modal').addClass('show');
-      }, 1 );
-    }
-    function closeModal() {
-      $('html').css('overflow', 'auto');
-      $('#modal').css('overflow', 'hidden');
-      $('#modal').removeClass('show');
-      setTimeout( function() {
-        $('#modal').addClass('hidden');
-      }, 500 );
-    }
-  </script>
-  <script>
-    function book(tour) {
-      openModal('booking');
-      if (tour) { $('#bookingModal select').val(tour) };
-      getPrices();
-    }
-  </script>
-  <script>
-    function getFooter() {
-      $('footer').append(document.getElementById('footer').import.querySelector('div'));
-    }
-  </script>
-  <body data-position="relative" onload="getFooter()">
+  
+  
+  
+  <body data-position="relative">
     <section id="main" class="flex-row">
       <div class="flex-container" data-align-content="justify">
         <div class="main-navigation" data-padding="16x 24y lg:0x lg:64y">
           <div class="flex-row flex-items-center" data-cell-spacing="16px; xs: 8px" data-align-content="center; md: end">
-            <a href="#tours">Tours</a>
-            <a href="#places">Sights</a>
-            <a href="#advantages">Advantages</a>
-            <a href="#guides">Guides</a>
+            <a onclick="scrollTo('#tours')">Tours</a>
+            <a onclick="scrollTo('#places')">Sights</a>
+            <a onclick="scrollTo('#advantages')">Advantages</a>
+            <a onclick="scrollTo('#guides')">Guides</a>
             <div>
               <a class="main-navigation-cta" onclick="book()">Book now</a>
             </div>
@@ -159,7 +63,7 @@
           <div class="flex-col flex-items-center">
             <h1>Astana Guide</h1>
             <h2>We welcome <br><span>Friends!</span></h2>
-            <a href="#tours" class="main-content-cta">Read more</a>
+            <a onclick="scrollTo('#tours')" class="main-content-cta">Read more</a>
           </div>
         </div>
       </div>
@@ -593,16 +497,6 @@ Local mobile SIM card as a gift
               <div class="advantage" data-padding="32px xs:16px">
                 <div data-text-align="center" data-cell-spacing="12px">
                   <div>
-                    <img src="img/badges/payment.svg" width="64">
-                  </div>
-                  <div>
-Online or cash payment
-                  </div>
-                </div>
-              </div>
-              <div class="advantage" data-padding="32px xs:16px">
-                <div data-text-align="center" data-cell-spacing="12px">
-                  <div>
                     <img src="img/badges/support.svg" width="64">
                   </div>
                   <div>
@@ -853,7 +747,7 @@ Your name
                       <input type="radio" name="messenger" id="messenger-email" checked>
                       <input type="radio" name="messenger" id="messenger-whatsapp">
                       <input type="radio" name="messenger" id="messenger-telegram">
-                      <label for="messenger-email" data-width="5">
+                      <label for="messenger-email" data-width="5" onclick="toggleDropdown('booking-form-messenger')">
                         <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
                           <div class="flex-shrink ellipsis">Email</div>
                           <div>
@@ -861,7 +755,7 @@ Your name
                           </div>
                         </div>
                       </label>
-                      <label for="messenger-whatsapp" data-width="5">
+                      <label for="messenger-whatsapp" data-width="5" onclick="toggleDropdown('booking-form-messenger')">
                         <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
                           <div class="flex-shrink ellipsis">WhatsApp</div>
                           <div>
@@ -869,7 +763,7 @@ Your name
                           </div>
                         </div>
                       </label>
-                      <label for="messenger-telegram" data-width="5">
+                      <label for="messenger-telegram" data-width="5" onclick="toggleDropdown('booking-form-messenger')">
                         <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
                           <div class="flex-shrink ellipsis">Telegram</div>
                           <div>
@@ -900,7 +794,57 @@ Book now
         </div>
       </div>
     </section>
-    <footer></footer>
+    <footer>
+      <div class="flex-container" data-padding="32y 16x lg:0x">
+        <div class="flex-row flex-items-center" data-align-content="justify">
+          <div>
+            <div data-cell-spacing="8px" data-display="col sm: row" data-align-items="sm: center">
+              <a href="mailto:info@astanaguide.kz" title="
+Write email
+                                                          ">
+                <div class="flex-row flex-items-center" data-cell-spacing="4px">
+                  <div>
+                    <img src="img/gmail.svg" width="32">
+                  </div>
+                  <div>info@astanaguide.kz</div>
+                </div>
+              </a>
+              <div>
+                <div class="flex-row flex-items-center" data-cell-spacing="4px">
+                  <div>
+                    <img src="img/whatsapp.svg" width="32">
+                  </div>
+                  <div>+7 778 948 4224</div>
+                </div>
+              </div>
+              <div>
+                <div class="flex-row flex-items-center" data-cell-spacing="4px">
+                  <div>
+                    <img src="img/telegram.svg" width="32">
+                  </div>
+                  <div>+7 778 948 4224</div>
+                </div>
+              </div>
+              <a href="https://www.instagram.com/astanaguide.kz/" target="_blank" title="
+Open in Instagram
+                                                                                         ">
+                <div class="flex-row flex-items-center" data-cell-spacing="4px">
+                  <div>
+                    <img src="img/instagram.svg" width="32">
+                  </div>
+                  <div>astanaguide.kz</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <a href="/" title="
+Go to Homepage
+                             ">
+            <img src="img/logo.svg" width="96">
+          </a>
+        </div>
+      </div>
+    </footer>
     <div id="modal" class="hidden" data-padding="0 md:32px">
       <div id="modal-fade" onclick="closeModal()"></div>
       <div id="modal-body" data-position="relative">
@@ -908,4 +852,1276 @@ Book now
       </div>
     </div>
   </body>
+  
+  
+  
+  <div id="book" style="display: none">
+    <div class="flex-row" id="bookingModal">
+      <button class="modalCloseButton" onclick="closeModal()">
+        <i class="material-icons" data-padding="16px">close</i>
+      </button>
+      <div class="flex-half" style="background: url(/img/modal-book.jpg) center / cover no-repeat" data-display="xs: none"></div>
+      <div class="flex-col flex-full flex-sm-half">
+        <h4 data-padding="32px">
+Book a Tour
+        </h4>
+        <form id="bookingModal-form" data-padding="32px">
+          <div class="flex-col" data-cell-spacing="8px">
+            <div class="flex-col">
+              <select class="input select" name="tour" onchange="getPrices()">
+                <option value="walking">
+Walking Tour
+                </option>
+                <option value="halfday">
+Half-Day Tour
+                </option>
+                <option value="fullday">
+Full-Day Tour
+                </option>
+                <option value="river">
+River Boat Tour
+                </option>
+                <option value="burabay">
+Burabay Tour
+                </option>
+              </select>
+            </div>
+            <div class="flex-col">
+              <input class="input" type="text" name="name" placeholder="
+Your name
+                                                          ">
+            </div>
+            <div>
+              <div data-position="relative" style="height: 40px">
+                <div class="layer flex-col booking-form-contact">
+                  <input type="radio" name="contact" id="contact-email" checked>
+                  <input type="radio" name="contact" id="contact-whatsapp">
+                  <input type="radio" name="contact" id="contact-telegram">
+                  <label for="contact-email" data-width="5" onclick="toggleDropdown('booking-form-contact')">
+                    <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
+                      <div class="flex-shrink ellipsis">Email</div>
+                      <div>
+                        <img src="img/gmail.svg" width="32">
+                      </div>
+                    </div>
+                  </label>
+                  <label for="contact-whatsapp" data-width="5" onclick="toggleDropdown('booking-form-contact')">
+                    <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
+                      <div class="flex-shrink ellipsis">WhatsApp</div>
+                      <div>
+                        <img src="img/whatsapp.svg" width="32">
+                      </div>
+                    </div>
+                  </label>
+                  <label for="contact-telegram" data-width="5" onclick="toggleDropdown('booking-form-contact')">
+                    <div class="flex-row flex-items-center flex-content-end flex-nowrap" data-cell-spacing="4px">
+                      <div class="flex-shrink ellipsis">Telegram</div>
+                      <div>
+                        <img src="img/telegram.svg" width="32">
+                      </div>
+                    </div>
+                  </label>
+                  <input class="input" type="email" name="email" data-width="7" placeholder="
+Your email
+                                                                               ">
+                  <input class="input" type="tel" name="whatsapp" data-width="7" placeholder="
+Your whatsapp
+                                                                                ">
+                  <input class="input" type="text" name="telegram" data-width="7" placeholder="
+Your telegram
+                                                                                 ">
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex-row flex-nowrap">
+                <input type="radio" name="seats" id="seats3" value="3" checked>
+                <label for="seats3" class="flex-full flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+1-3 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="seats-3"></span> $
+                    </div>
+                  </div>
+                </label>
+                <input type="radio" name="seats" id="seats4" value="4">
+                <label for="seats4" class="flex-full flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+4 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="seats-4"></span> $
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="flex-col">
+              <button type="button" id="bookingModal-button" class="button button-primary modal-button flex-grow" onclick="sendForm2('swift.php')">Book Now</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="success" style="display: none">
+    <div class="flex-row" id="successModal">
+      <button class="modalCloseButton" onclick="closeModal()">
+        <i class="material-icons" data-padding="16px">close</i>
+      </button>
+      <div class="flex-full">
+        <div class="flex-col" data-cell-spacing="16px" data-padding="64px" data-align-items="center" data-text-align="center">
+          <h4>
+      Well done!
+          </h4>
+          <div>
+      We will write you as soon as posible for details
+          </div>
+          <div>
+            <button class="button button-primary" data-padding="32x" onclick="closeModal()">Got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="walking" style="display: none">
+    <div class="modal-photo" data-shape="2x1" style="background: url(/img/tours/walking-800.jpg) center / cover no-repeat">
+      <button class="modalCloseButton" onclick="closeModal()">
+        <i class="material-icons" data-padding="16px">close</i>
+      </button>
+    </div>
+    <div class="modal-content flex-col" data-padding="32px">
+      <div class="flex-col" data-cell-spacing="16px">
+        <div>
+          <div data-cell-spacing="8px">
+            <div class="tour-title">
+Walking Tour
+            </div>
+            <div class="flex-grow">
+              <div class="tour-description">
+In order to feel the city you need to walk through it.
+This walking tour will take you along the straight line named by Kisho Kurokawa,
+master of the general plan of Astana, as “Millennium Axis”
+              </div>
+            </div>
+            <div>
+              <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                <i class="material-icons">schedule</i>
+                <div>
+Duration: 2-3 hours
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row" data-cell-spacing="16px">
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+INCLUDES:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">person</i>
+                    <div>
+Personal guide
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_taxi</i>
+                    <div>
+Pick-up & drop-off
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">style</i>
+                    <div>
+Admission fees & tickets
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">map</i>
+                    <div>
+Map of Astana's top ranked places
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">photo_camera</i>
+                    <div>
+High-quiality photos
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">card_giftcard</i>
+                    <div>
+Kazakh Traditional Gift
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">sim_card</i>
+                    <div>
+Local mobile SIM cards
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_atm</i>
+                    <div>
+No hidden costs!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+EXCLUDES:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">restaurant</i>
+                    <div>
+Meals and drinks
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">account_balance_wallet</i>
+                    <div>
+Personal expenses
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_activity</i>
+                    <div>
+Optional activities
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-full flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+HIGHLIGHTS:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+Main Square
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+Astana-Bayterek monument
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+Green Water Boulevard
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+Round Square
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+Khan Shatyr Shopping & Entertainment Center
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row" data-cell-spacing="16px" data-align-content="start">
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-row" data-cell-spacing="12px">
+                <div class="flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+1-3 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="walking-3"></span> $
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical"></div>
+                <div class="flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+4 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="walking-4"></span> $
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row flex-full flex-sm-half flex-md-4">
+              <button class="button button-primary flex-grow" data-size="lg" onclick="book('walking')">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="halfday" style="display: none">
+    <div class="modal-photo" data-shape="2x1" style="background: url(/img/tours/halfday-800.jpg) center / cover no-repeat">
+      <button class="modalCloseButton" onclick="closeModal()">
+        <i class="material-icons" data-padding="16px">close</i>
+      </button>
+    </div>
+    <div class="modal-content flex-col" data-padding="32px">
+      <div class="flex-col" data-cell-spacing="16px">
+        <div>
+          <div data-cell-spacing="8px">
+            <div class="tour-title">
+  Half-Day Tour
+            </div>
+            <div class="flex-grow">
+              <div class="tour-description">
+  Enjoy this private sightseeing tour of the city of Astana - the youngest capital in the world, and the pride of modern Kazakhstan
+              </div>
+            </div>
+            <div>
+              <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                <i class="material-icons">schedule</i>
+                <div>
+  Duration: 2-3 hours
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row" data-cell-spacing="16px">
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  INCLUDES:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">person</i>
+                    <div>
+  Personal guide
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_taxi</i>
+                    <div>
+  Pick-up & drop-off
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">style</i>
+                    <div>
+  Admission fees & tickets
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">map</i>
+                    <div>
+  Map of Astana's top ranked places
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">photo_camera</i>
+                    <div>
+  High-quiality photos
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">card_giftcard</i>
+                    <div>
+  Kazakh Traditional Gift
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">sim_card</i>
+                    <div>
+  Local mobile SIM cards
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_atm</i>
+                    <div>
+  No hidden costs!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  EXCLUDES:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">restaurant</i>
+                    <div>
+  Meals and drinks
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">account_balance_wallet</i>
+                    <div>
+  Personal expenses
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_activity</i>
+                    <div>
+  Optional activities
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-full flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  HIGHLIGHTS:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Independence Square
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Kazakh Eli monument
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Khazret Sultan Mosque
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Astana-Bayterek monument
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Khan Shatyr Shopping & Entertainment Center
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row" data-cell-spacing="16px" data-align-content="start">
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-row" data-cell-spacing="12px">
+                <div class="flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+  1-3 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="halfday-3"></span> $
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical"></div>
+                <div class="flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+  4 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="halfday-4"></span> $
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row flex-full flex-sm-half flex-md-4">
+              <button class="button button-primary flex-grow" data-size="lg" onclick="book('halfday')">
+  Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  <div id="fullday" style="display: none">
+    <div class="modal-photo" data-shape="2x1" style="background: url(/img/tours/fullday-800.jpg) center / cover no-repeat">
+      <button class="modalCloseButton" onclick="closeModal()">
+        <i class="material-icons" data-padding="16px">close</i>
+      </button>
+    </div>
+    <div class="modal-content flex-col" data-padding="32px">
+      <div class="flex-col" data-cell-spacing="16px">
+        <div>
+          <div data-cell-spacing="8px">
+            <div class="tour-title">
+  Full-Day Tour
+            </div>
+            <div class="flex-grow">
+              <div class="tour-description">
+  Add a little romanticism in your journey to the capital of Kazakhstan
+  and see how eastern traditional shapes harmonize with Western architecture
+              </div>
+            </div>
+            <div>
+              <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                <i class="material-icons">schedule</i>
+                <div>
+  Duration: 4-5 hours
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row" data-cell-spacing="16px">
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  INCLUDES:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">person</i>
+                    <div>
+  Personal guide
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_taxi</i>
+                    <div>
+  Pick-up & drop-off
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">style</i>
+                    <div>
+  Admission fees & tickets
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">photo_camera</i>
+                    <div>
+  High-quality photos from the tour
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">map</i>
+                    <div>
+  Map of Astana's top ranked places
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">photo_camera</i>
+                    <div>
+  High-quiality photos
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">card_giftcard</i>
+                    <div>
+  Kazakh Traditional Gift
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">sim_card</i>
+                    <div>
+  Local mobile SIM cards
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_atm</i>
+                    <div>
+  No hidden costs!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  EXCLUDES:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">restaurant</i>
+                    <div>
+  Meals and drinks
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">account_balance_wallet</i>
+                    <div>
+  Personal expenses
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_activity</i>
+                    <div>
+  Optional activities
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-full flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  HIGHLIGHTS:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Independence Square
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Kazakh Eli monument
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Khazret Sultan Mosque
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Palace of Peace and Reconciliation
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Astana-Bayterek monument
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Green Water Boulevard
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Round Square
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Khan Shatyr Shopping & Entertainment Center
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row" data-cell-spacing="16px" data-align-content="start">
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-row" data-cell-spacing="12px">
+                <div class="flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+  1-3 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="fullday-3"></span> $
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical"></div>
+                <div class="flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+  4 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="fullday-4"></span> $
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row flex-full flex-sm-half flex-md-4">
+              <button class="button button-primary flex-grow" data-size="lg" onclick="book('fullday')">
+  Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="river" style="display: none">
+    <div class="modal-photo" data-shape="2x1" style="background: url(/img/tours/river-800.jpg) center / cover no-repeat">
+      <button class="modalCloseButton" onclick="closeModal()">
+        <i class="material-icons" data-padding="16px">close</i>
+      </button>
+    </div>
+    <div class="modal-content flex-col" data-padding="32px">
+      <div class="flex-col" data-cell-spacing="16px">
+        <div>
+          <div data-cell-spacing="8px">
+            <div class="tour-title">
+  River Boat Tour
+            </div>
+            <div class="flex-grow">
+              <div class="tour-description">
+  Unforgettable tour with a part on a boat trip.
+  You will see the main sights of the capital city of Kazakhstan
+  and enjoy the panoramic view of the city from the Ishim river crossing the Astana
+              </div>
+            </div>
+            <div>
+              <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                <i class="material-icons">schedule</i>
+                <div>
+  Duration: 4-5 hours
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row" data-cell-spacing="16px">
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  INCLUDES:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">person</i>
+                    <div>
+  Personal guide
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_taxi</i>
+                    <div>
+  Pick-up & drop-off
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">style</i>
+                    <div>
+  Admission fees & tickets
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">map</i>
+                    <div>
+  Map of Astana's top ranked places
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">photo_camera</i>
+                    <div>
+  High-quiality photos
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">card_giftcard</i>
+                    <div>
+  Kazakh Traditional Gift
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">sim_card</i>
+                    <div>
+  Local mobile SIM cards
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_atm</i>
+                    <div>
+  No hidden costs!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  EXCLUDES:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">restaurant</i>
+                    <div>
+  Meals and drinks
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">account_balance_wallet</i>
+                    <div>
+  Personal expenses
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_activity</i>
+                    <div>
+  Optional activities
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-full flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  HIGHLIGHTS:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Independence Square
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Kazakh Eli monument
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Khazret Sultan Mosque
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Palace of Peace and Reconciliation
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Embankment of Ishym River
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Boat trip on Ishim Riverr
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row" data-cell-spacing="16px" data-align-content="start">
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-row" data-cell-spacing="12px">
+                <div class="flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+  1-3 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="river-3"></span> $
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical"></div>
+                <div class="flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+  4 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="river-4"></span> $
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row flex-full flex-sm-half flex-md-4">
+              <button class="button button-primary flex-grow" data-size="lg" onclick="book('river')">
+  Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="burabay" style="display: none">
+    <div class="modal-photo" data-shape="2x1" style="background: url(/img/tours/burabay-800.jpg) center / cover no-repeat">
+      <button class="modalCloseButton" onclick="closeModal()">
+        <i class="material-icons" data-padding="16px">close</i>
+      </button>
+    </div>
+    <div class="modal-content flex-col" data-padding="32px">
+      <div class="flex-col" data-cell-spacing="16px">
+        <div>
+          <div data-cell-spacing="8px">
+            <div class="tour-title">
+  Burabay Tour
+            </div>
+            <div class="flex-grow">
+              <div class="tour-description">
+  Enjoy this private full day tour to Kazakh Switzerland - a fantastic area
+  with unique and inimitable beauty of landscapes, created by nature
+              </div>
+            </div>
+            <div>
+              <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                <i class="material-icons">schedule</i>
+                <div>
+  Duration: 9-10 hours
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row" data-cell-spacing="16px">
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  INCLUDES:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">person</i>
+                    <div>
+  Personal guide
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_taxi</i>
+                    <div>
+  Pick-up & drop-off
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">style</i>
+                    <div>
+  Admission fees & tickets
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">map</i>
+                    <div>
+  Map of Astana's top ranked places
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">photo_camera</i>
+                    <div>
+  High-quiality photos
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">card_giftcard</i>
+                    <div>
+  Kazakh Traditional Gift
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">sim_card</i>
+                    <div>
+  Local mobile SIM cards
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">restaurant</i>
+                    <div>
+  Meals and drinks
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_atm</i>
+                    <div>
+  No hidden costs!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  EXCLUDES:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">account_balance_wallet</i>
+                    <div>
+  Personal expenses
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">local_activity</i>
+                    <div>
+  Optional activities
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-full flex-md-4">
+              <div class="flex-col" data-cell-spacing="4px">
+                <b>
+  HIGHLIGHTS:
+                </b>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Burabai National Park
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Abylai Khan Valley
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Bolektau and Kokshetau Mountains
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-row flex-items-center flex-nowrap" data-cell-spacing="4px">
+                    <i class="material-icons">place</i>
+                    <div>
+  Ok-Zhetpes and Zhumbaktas
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-row" data-cell-spacing="16px" data-align-content="start">
+            <div class="flex-full flex-sm-half flex-md-4">
+              <div class="flex-row" data-cell-spacing="12px">
+                <div class="flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+  1-3 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="burabay-3"></span> $
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical"></div>
+                <div class="flex-grow">
+                  <div class="flex-col" data-text-align="center" data-cell-spacing="4px">
+                    <div class="ellipsis">
+  4 seats
+                    </div>
+                    <div class="tour-price">
+                      <span class="burabay-4"></span> $
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row flex-full flex-sm-half flex-md-4">
+              <button class="button button-primary flex-grow" data-size="lg" onclick="book('burabay')">
+  Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-46778520-4', 'auto');
+    ga('send', 'pageview');
+  </script>
 </html>

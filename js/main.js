@@ -1,9 +1,9 @@
 var prices = [
-  [110, 120], // walking tour
-  [110, 120], // half-day tour
-  [185, 200], // full-day tour
-  [185, 200], // river boat tour
-  [395, 405]  // burabay tour
+  [100, 105], // walking tour
+  [100, 105], // half-day tour
+  [175, 180], // full-day tour
+  [175, 180], // river boat tour
+  [390, 400]  // burabay tour
 ]
 
 $(document).ready(function() {
@@ -52,9 +52,12 @@ $(document).ready(function() {
   });
 });
 
+function toggleDropdown(className) {
+  $('.' + className).toggleClass('-focused');
+}
+
 function adapt() {
   var viewportWidth = window.innerWidth;
-  console.log(viewportWidth);
   if (viewportWidth < 600) {
     toursShown = 1;
     guidesShown = 1;
@@ -81,7 +84,7 @@ function adapt() {
 }
 
 function getPrices() {
-  var tour = $('#bookingModal select[name="tour"]').val();
+  var tour = $('#modal-body select[name="tour"]').val();
   switch(tour) {
     case 'walking':
       $('.seats-3').html(prices[0][0]);
@@ -117,4 +120,91 @@ function setPrices() {
   $('.river-4').html(prices[3][1]);
   $('.burabay-3').html(prices[4][0]);
   $('.burabay-4').html(prices[4][1]);
+}
+
+function scrollTo(elem) {
+  if($(elem)) {
+    var destination = $(elem).offset().top;
+    $("html,body").animate({scrollTop: destination}, 800);
+  }
+}
+
+function book(tour) {
+  openModal('book');
+  if (tour) { $('#bookingModal select').val(tour) };
+  getPrices();
+}
+
+function openModal(id) {
+  document.getElementById('modal-body').innerHTML = document.getElementById(id).innerHTML;
+  setPrices();
+  $('html').css('overflow', 'hidden');
+  $('#modal').css('overflow', 'auto');
+  $('#modal').removeClass('hidden');
+  setTimeout( function() {
+    $('#modal').addClass('show');
+  }, 1 );
+}
+
+function closeModal() {
+  $('html').css('overflow', 'auto');
+  $('#modal').css('overflow', 'hidden');
+  $('#modal').removeClass('show');
+  setTimeout( function() {
+    $('#modal').addClass('hidden');
+  }, 500 );
+}
+
+function sendForm(url) {
+  if ( $('#booking-form input[name="email"]').val() || $('#booking-form input[name="whatsapp"]').val() || $('#booking-form input[name="telegram"]').val() ) {
+    $('#booking-form-button').prop('disabled', true);
+    $('#booking-form-button').html('Booking...');
+    jQuery.ajax({
+      url: url,
+      type: "POST",
+      dataType: "html",
+      data: jQuery("#booking-form").serialize(),
+      success: function(response) {
+        setTimeout( function() {
+          openModal('success');
+        }, 1000 );
+      },
+      error: function(response) {
+        $('#popup_main_cta').html('Try again!');
+        setTimeout( function() {
+          $('#booking-form-button').prop('disabled', false);
+          $('#booking-form-button').prop('value', 'Book now');
+        }, 1000 );
+      }
+    });
+  } else {
+    alert('Please specify your email, whatsapp or telegram');
+  }
+}
+
+function sendForm2(url) {
+  if ( $('#bookingModal input[name="email"]').val() || $('#bookingModal input[name="whatsapp"]').val() || $('#bookingModal input[name="telegram"]').val() ) {
+    $('#bookingModal-button').prop('disabled', true);
+    $('#bookingModal-button').html('Booking...');
+    jQuery.ajax({
+      url: url,
+      type: "POST",
+      dataType: "html",
+      data: jQuery("#bookingModal-form").serialize(),
+      success: function(response) {
+        setTimeout( function() {
+          openModal('success');
+        }, 1000 );
+      },
+      error: function(response) {
+        $('#bookingModal-button').html('Try again!');
+        setTimeout( function() {
+          $('#bookingModal-button').prop('disabled', false);
+          $('#bookingModal-button').prop('value', 'Book now');
+        }, 1000 );
+      }
+    });
+  } else {
+    alert('Please specify your email, whatsapp or telegram');
+  }
 }

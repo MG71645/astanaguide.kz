@@ -16,7 +16,7 @@
     $login = "landing@astanaguide.kz";
     $password = "l12341234";
     $sendFrom = array("landing@astanaguide.kz" => "astanaguide.kz");
-    $sendTo = array('mg71645@gmail.com', 'shaikhov.abl91@gmail.com');
+    $sendTo = array('info@astanaguide.kz', 'mg71645@gmail.com', 'shaikhov.abl91@gmail.com');
     
     
     $date = new DateTime('now', new DateTimeZone('Asia/Almaty'));
